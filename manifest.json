@@ -1,7 +1,7 @@
 {
   // 필수
   "manifest_version": 2,// 고정
-  "name": "안녕 웨일",
+  "name": "안봐도비디오",
   "version": "1.0.0",
   "content_security_policy": "script-src 'self' https://www.naver.com; object-src 'self'",
   "sidebar_action": {
@@ -10,7 +10,7 @@
       "16": "images/icon16.png"
     },
     "background": {
-      "scripts": ["src/sidebar.js"]
+      "scripts": ["src/index.js"]
     },
     "default_title": "사이드바앱",      // 선택
     "use_navigation_bar": true       // 선택

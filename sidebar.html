@@ -2,10 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script type="text/javascript" src="src/sidebar.js"></script>
     <title>Title</title>
     test4
 </head>
 <body>
+    <header>
+        <div>로고</div>
+    </header>
+    <section>
+        <input type="text" name="searchText" id="searchText" placeholder="검색할 단어를 입력하세요." autocomplete="off" />
+        <button class="btn" id="searchBtn">검색버튼</button>
+        <button class="btn" id="downloadBtn">다운로드버튼</button>
+        <button class="btn" id="repeatBtn">반복재생버튼</button>
+    </section>
+    <section>
+
+        <div>
+            1 자막
+        </div>
+        <div>
+            2 자막
+        </div>
+        <div>
+            3 자막
+        </div>
+        <a id="download_link" download="my_exported_file.txt" href=”” >Download as Text File</a>
+
+    </section>
+    <script type="module" src="src/index.js"></script>
 </body>
 </html>

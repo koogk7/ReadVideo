@@ -5,7 +5,7 @@ console.log("test");
 
 window.onload = function () {
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', 'blob:https://tv.naver.com/695e1e19-4ad2-43e7-a893-2b4f2f6038d9');
+    xhr.open('GET', 'blob:https://tv.naver.com/v/10438007');
     xhr.send();
 
     xhr.onreadystatechange = function () {
@@ -25,6 +25,8 @@ document.addEventListener(`visibilitychange`, function() {
     if (document.visibilityState === `visible`) {
         // 사이드바가 열렸을 때
         console.log("Open Sidebar");
+
+
     } else {
         // 사이드바가 닫혔을 때
         console.log("Close Sidebar");

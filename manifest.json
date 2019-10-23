@@ -1,0 +1,21 @@
+{
+  // 필수
+  "manifest_version": 2,// 고정
+  "name": "안녕 웨일",
+  "version": "1.0.0",
+  "content_security_policy": "script-src 'self' https://www.naver.com; object-src 'self'",
+  "sidebar_action": {
+    "default_page": "sidebar.html",  // 필수
+    "default_icon": {                // 필수
+      "16": "images/icon16.png"
+    },
+    "background": {
+      "scripts": ["src/sidebar.js"]
+    },
+    "default_title": "사이드바앱",      // 선택
+    "use_navigation_bar": true       // 선택
+  },
+  "permissions": [
+    "downloads"
+  ]
+}

@@ -8,26 +8,22 @@
     <header>
         <div>로고</div>
     </header>
-    <section>
+    <div class="top_bar">
         <input type="text" name="searchText" id="searchText" placeholder="검색할 단어를 입력하세요." autocomplete="off" />
         <button class="btn" id="searchBtn">검색버튼</button>
         <button class="btn" id="downloadBtn">다운로드버튼</button>
         <button class="btn" id="repeatBtn">반복재생버튼</button>
-    </section>
-    <section>
+    </div>
+    <div class="subtitle_wrap">
 
-        <div>
-            1 자막
+        <div class="subtitle_div">
+            <span class="progress_bar">|</span>
+            <span class="subtitle_content">"On the red tiles in my family's den"</span>
         </div>
-        <div>
-            2 자막
-        </div>
-        <div>
-            3 자막
-        </div>
+        <!--Todo id 네이밍 카멜로 변경-->
         <a id="download_link" download="my_exported_file.txt" href=”” >Download as Text File</a>
 
-    </section>
+    </div>
     <script type="module" src="src/index.js"></script>
 </body>
 </html>

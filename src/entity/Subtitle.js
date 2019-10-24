@@ -10,7 +10,6 @@ export default class Subtitle {
     adapter(subtitleTextArray){
         console.log(subtitleTextArray);
         let lineSplit = subtitleTextArray.split('\n');
-
         if(lineSplit.length < 3){
             console.log("자막 형식이 올바르지 않습니다.");
             return false;

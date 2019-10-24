@@ -9,15 +9,13 @@ class ReadVideo {
     constructor() {
         console.log("Success Load");
         this.subtitles = [];
-        this.initExecuteCode = this.initExecuteCode().bind(this);
-    this.input = document.querySelector('track');
-    this.donwloadBtn= document.querySelector('#downloadBtn')
-    this.track= document.querySelector('track');
-    this.downloadAdmin = new DownloadAdmin();
+        this.donwloadBtn= document.querySelector('#downloadBtn');
+        this.track= document.querySelector('track');
+        this.downloadAdmin = new DownloadAdmin();
 
         this.initExecuteCode();
-    console.log(this.donwloadBtn);
-    this.donwloadBtn.addEventListener('click', this.downloadAdmin.test);
+        console.log(this.donwloadBtn);
+        this.donwloadBtn.addEventListener('click', this.downloadAdmin.test);
 
         console.log("Success Init");
     }
@@ -35,30 +33,51 @@ class ReadVideo {
             if(result == null)
                 console.log("자막을 가져오는데 오류가 발생했습니다.");
             else
-                this.transSubtitles(result[0]);
-
+                this.subtitles = this.transSubtitles(result[0]);
+                this.renderSubtitle(this.subtitles);
             // Todo 확장앱에 데이터 삽입
-        }.bind(this)).bind(this); // Todo bind 공부
+        }.bind(this));
     };
 
     transSubtitles(subtitlesText) {
         let paragraphSplit = subtitlesText.split('\n\n');
-
-        console.log(paragraphSplit);
+        let rst  = [];
 
         paragraphSplit.map(item => {
             let subtitle = new Subtitle();
 
             if(subtitle.adapter(item))
-                this.subtitles.push(subtitle);
+                rst.push(subtitle);
         });
 
         console.log("=============");
-        console.log(this.subtitles);
-
+        console.log(rst);
+        return rst;
     }
 
+    renderSubtitle(subtitles){
 
+        let contentNode = document.querySelector('.subtitle_wrap');
+        console.log("=====RenderSubtitle====");
+
+        subtitles.map(item => {
+            let subtitleDiv = document.createElement('div');
+            let progressBar = document.createElement('span');
+            let subtitleContent = document.createElement('span');
+
+
+            /*
+            Todo 노드 속성 등을 정해줘야함
+             */
+            progressBar.textContent = '|';
+            subtitleContent.textContent = item.content;
+
+            subtitleDiv.appendChild(progressBar);
+            subtitleDiv.appendChild(subtitleContent);
+            contentNode.appendChild(subtitleDiv);
+        })
+
+    }
 
 }
 

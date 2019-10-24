@@ -1,4 +1,4 @@
-export default class ShowSubtitle {
+export default class ShowSubtitle { // Todo 이름 마음에 안듬
   constructor() {
     this.body = document.body;
   }

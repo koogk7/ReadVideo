@@ -33,7 +33,6 @@ export default class ShowSubtitle { // Todo 이름 마음에 안듬
             if (xhr.readyState !== XMLHttpRequest.DONE) return;
 
             if (xhr.status === 200) {
-                document.getElementById('content').innerHTML = xhr.responseText;
                 subtitle = xhr.responseText;
             } else {
                 console.log(`[${xhr.status}] : ${xhr.statusText}`);

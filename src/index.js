@@ -7,7 +7,7 @@ import DownloadAdmin from './service/download.js';
 class ReadVideo {
     /* Todo
     resetSidePage - 사이드바가 열렸을 때, 확장앱 페이지를 비움
-    
+
      */
 
     constructor() {

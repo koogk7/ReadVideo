@@ -11,11 +11,13 @@ class ReadVideo {
     constructor() {
         console.log("Success Load");
         this.subtitles = [];
-        this.donwloadBtn= document.querySelector('#downloadBtn');
-        this.track= document.querySelector('track');
-        this.downloadAdmin = new DownloadAdmin();
+        this.subtitleListNode = document.querySelector('.subtitle_list');
+        this.activeTabId = null;
 
+        this.donwloadBtn= document.querySelector('#downloadBtn');
+        this.downloadAdmin = new DownloadAdmin();
         this.donwloadBtn.addEventListener('click', this.downloadAdmin.test);
+
         this.whaleEventListener();
 
         console.log("Success Init");
@@ -30,33 +32,28 @@ class ReadVideo {
         });
     }
 
-    static removeSubtitleList(){
-        let subtitleList = document.querySelector('.subtitle_list');
-        
-        while(subtitleList.firstChild) {
-            subtitleList.removeChild(subtitleList.firstChild);
+    removeSubtitleList(){
+        while(this.subtitleListNode.firstChild) {
+            this.subtitleListNode.removeChild(this.subtitleListNode.firstChild);
         }
     }
 
     loadSubtitles(){
         whale.tabs.executeScript({
             code: `
-        console.log(window.showSubtitle);
-        window.showSubtitle.getSubtitles();
+        if(window.showSubtitle.hasVideo())
+            window.showSubtitle.getSubtitles();    
       `
         }, (result) => { //  실행된 코드 마지막 결과를 받아온다.
-            //Todo null 처리
-            if(result == null)
+            console.log(result);
+            if(result == null){
                 console.log("자막을 가져오는데 오류가 발생했습니다.");
+                this.renderNoSupport();
+            }
             else{
-                console.log('자막 추출 성공');
-                console.log(result);
                 this.subtitles = this.transSubtitles(result[0]);
-                console.log(this.subtitles);
-                // Todo 확장앱에 데이터 삽입
                 this.renderSubtitle(this.subtitles);
             }
-
         });
     }
 
@@ -75,31 +72,34 @@ class ReadVideo {
     }
 
     renderSubtitle(subtitles){
-
-        let subtitleList = document.querySelector('.subtitle_list');
         console.log("=====RenderSubtitle====");
 
         subtitles.map(item => {
-            let subtitleWrap = document.createElement('div');
-            let progressBar = document.createElement('span');
-            let subtitleContent = document.createElement('span');
-
+            let subtitleWrapNode = document.createElement('div');
+            let progressBarNode = document.createElement('span');
+            let subtitleContentNode = document.createElement('span');
 
             /*
             Todo 노드 속성 등을 정해줘야함
              */
-            subtitleWrap.classList.add('subtitle_wrap');
-            progressBar.classList.add('progress_bar');
-            subtitleContent.classList.add('subtitle_content');
+            subtitleWrapNode.classList.add('subtitle_wrap');
+            progressBarNode.classList.add('progress_bar');
+            subtitleContentNode.classList.add('subtitle_content');
 
-            subtitleContent.textContent = item.content;
+            subtitleContentNode.textContent = item.content;
 
-
-            subtitleWrap.appendChild(progressBar);
-            subtitleWrap.appendChild(subtitleContent);
-            subtitleList.appendChild(subtitleWrap);
+            subtitleWrapNode.appendChild(progressBarNode);
+            subtitleWrapNode.appendChild(subtitleContentNode);
+            this.subtitleListNode.appendChild(subtitleWrapNode);
         })
 
+    }
+
+    renderNoSupport(){
+        //Todo 구체화 필요
+        let temp = document.createElement('div');
+        temp.textContent = '지원하지 않는 페이지입니다';
+        this.subtitleListNode.appendChild(temp);
     }
 
     whaleEventListener(){
@@ -108,12 +108,16 @@ class ReadVideo {
         whale.tabs.onUpdated.addListener((id, changeInfo) => {
             if(changeInfo.status === 'complete') {
                 this.initExecuteCode();
-                ReadVideo.removeSubtitleList();
+                this.removeSubtitleList();
+                this.loadSubtitles();
             }
         });
 
         // 다른 탭이 활성화 되었을때
         whale.tabs.onActivated.addListener(() => {
+            this.initExecuteCode();
+            this.removeSubtitleList();
+            this.loadSubtitles();
         });
 
         // 탭이 종료되었을때
@@ -125,6 +129,8 @@ class ReadVideo {
         document.addEventListener('visibilitychange', ()=>{
             if (document.visibilityState === `visible`) {
                 // 사이드바가 열렸을 때
+                this.initExecuteCode();
+                this.removeSubtitleList();
                 this.loadSubtitles();
             }
         }); // 화살표함수는 자체적으로 this를 bind 하지 않음

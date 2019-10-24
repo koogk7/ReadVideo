@@ -1,6 +1,5 @@
 export default class ShowSubtitle { // Todo 이름 마음에 안듬
     constructor() {
-        this.body = document.body;
     }
 
     getSubtitles() {
@@ -13,18 +12,18 @@ export default class ShowSubtitle { // Todo 이름 마음에 안듬
         }
         console.log("자막 추출 성공 : " + track.getAttribute('src'));
 
-        // 비동기로 자막 내용을 가져와야함 ==> URL scheme must be "http" or "https" for CORS request. 에러 발생
-        // let test = await fetch(trackAddress)
-        //     .then(res => res.json())
-        //     .then(res => res);
-
-        let subtitle = this.requestSutitle(trackAddress);
+        let subtitle = this.requestSubtitle(trackAddress);
         console.log(subtitle);
 
         return subtitle;
     }
 
-    requestSutitle(address) {
+    hasVideo() {
+        let videoTag = document.querySelector('video');
+        return videoTag !== undefined;
+    }
+
+    requestSubtitle(address) {
         const xhr = new XMLHttpRequest();
         let subtitle = '';
 

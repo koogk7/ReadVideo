@@ -1,0 +1,18 @@
+
+.subtitle_wrap{
+    margin-bottom: 2em;
+}
+
+.subtitle_wrap .progress_bar {
+    margin-right: 0.5em;
+}
+
+.progress_bar {
+    width: 0.5em;
+    height: 2em;
+    background-color: #298b63;
+    display: inline-block;
+    vertical-align: top;
+}
+
+

@@ -3,6 +3,10 @@
   "manifest_version": 2,// 고정
   "name": "안봐도 비디오 - 영상을 읽",
   "version": "1.0.0",
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["./src/service/showSubtitle.js"]
+  }],
   "content_security_policy": "script-src 'self' https://www.naver.com; object-src 'self'",
   "sidebar_action": {
     "default_page": "sidebar.html",  // 필수

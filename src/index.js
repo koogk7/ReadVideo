@@ -6,8 +6,6 @@ import DownloadAdmin from './service/download.js';
 
 class ReadVideo {
     /* Todo
-    resetSidePage - 사이드바가 열렸을 때, 확장앱 페이지를 비움
-
      */
 
     constructor() {
@@ -29,7 +27,15 @@ class ReadVideo {
             code: `
         window.showSubtitle = new ${ShowSubtitle}();
       `
-        });// 왜 전역으로 안되지 ==> 페이지가 새로 로드되니까 애가 날라가지...
+        });
+    }
+
+    static removeSubtitleList(){
+        let subtitleList = document.querySelector('.subtitle_list');
+        
+        while(subtitleList.firstChild) {
+            subtitleList.removeChild(subtitleList.firstChild);
+        }
     }
 
     loadSubtitles(){
@@ -98,10 +104,11 @@ class ReadVideo {
 
     whaleEventListener(){
 
-        // 탭이 업데이트 되었을때, 다시 문서에서 단어를 검색하도록
+        // 탭이 업데이트 되었을때
         whale.tabs.onUpdated.addListener((id, changeInfo) => {
             if(changeInfo.status === 'complete') {
                 this.initExecuteCode();
+                ReadVideo.removeSubtitleList();
             }
         });
 
@@ -118,7 +125,6 @@ class ReadVideo {
         document.addEventListener('visibilitychange', ()=>{
             if (document.visibilityState === `visible`) {
                 // 사이드바가 열렸을 때
-                console.log('Open Sidebar');
                 this.loadSubtitles();
             }
         }); // 화살표함수는 자체적으로 this를 bind 하지 않음

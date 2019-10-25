@@ -1,13 +1,23 @@
-var text = 'Some data I want to export';
-var data = new Blob([text], {type: 'text/plain'});
-var urll = window.URL.createObjectURL(data);
-
-// window.URL.revokeObjectURL(url);
-// document.getElementById('download_link').href = url;
-
 
 export default class downloadAdmin{
-  
+    constructor(){   
+    }
+    
+    downloadText(){
+        let list = document.getElementsByClassName("subtitle_content");
+        let text = "";
+        for (let i = 0; i < list.length; i++) {
+            text += list[i].textContent;
+        }
+        let data = new Blob([text], {type: 'text/plain'});
+
+        let url = window.URL.createObjectURL(data);
+
+        document.getElementById('downloadBtn').href = url;
+    }
+
+
+    
     // test(){
     //     console.log('download test');
 

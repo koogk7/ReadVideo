@@ -1,7 +1,6 @@
 import ShowSubtitle from './service/showSubtitle.js';
 import Subtitle from './entity/Subtitle.js';
 
-
 import DownloadAdmin from './service/download.js';
 
 class ReadVideo {
@@ -16,7 +15,7 @@ class ReadVideo {
 
         this.donwloadBtn= document.querySelector('#downloadBtn');
         this.downloadAdmin = new DownloadAdmin();
-        this.donwloadBtn.addEventListener('click', this.downloadAdmin.test);
+        this.donwloadBtn.addEventListener('click', this.downloadAdmin.downloadText);
 
         this.whaleEventListener();
 
@@ -76,19 +75,19 @@ class ReadVideo {
 
         subtitles.map(item => {
             let subtitleWrapNode = document.createElement('div');
-            let progressBarNode = document.createElement('span');
-            let subtitleContentNode = document.createElement('span');
+            // let progressBarNode = document.createElement('div');
+            let subtitleContentNode = document.createElement('div');
 
             /*
             Todo 노드 속성 등을 정해줘야함
              */
             subtitleWrapNode.classList.add('subtitle_wrap');
-            progressBarNode.classList.add('progress_bar');
+            // progressBarNode.classList.add('progress_bar');
             subtitleContentNode.classList.add('subtitle_content');
 
             subtitleContentNode.textContent = item.content;
 
-            subtitleWrapNode.appendChild(progressBarNode);
+            // subtitleWrapNode.appendChild(progressBarNode);
             subtitleWrapNode.appendChild(subtitleContentNode);
             this.subtitleListNode.appendChild(subtitleWrapNode);
         })

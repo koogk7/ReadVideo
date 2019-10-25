@@ -7,19 +7,28 @@
 <body>
     <link rel="stylesheet" type="text/css" href="styles/sidebar.css">
     <header>
-        <div>로고</div>
+        <div id="logo">
+            <img src="./image/top_logo.png" width="220px" height="70px"/>
+        </div>
     </header>
     <div class="top_bar">
         <input type="text" name="searchText" id="searchText" placeholder="검색할 단어를 입력하세요." autocomplete="off" />
-        <button class="btn" id="searchBtn">검색버튼</button>
-        <button class="btn" id="downloadBtn">다운로드버튼</button>
-        <button class="btn" id="repeatBtn">반복재생버튼</button>
+        <button class="btn" id="searchBtn">
+            <img src="./image/search_off.png" width="30px" height="30px"/>
+        </button>
+
+        <label class="checkbox-wrap"><input type="checkbox" name="" value=""><i class="check-icon"></i></label>
+
+        <!-- <input type="checkbox" class="btn" id="repeatBtn">
+        <label for="repeatBtn"></label>
+         -->
+        <a class="btn" id="downloadBtn"href="" download="sub.txt">다운로드버튼</a>
     </div>
 
     <!--Todo id 네이밍 카멜로 변경-->
-    <a id="download_link" download="my_exported_file.txt" href=”” >Download as Text File</a>
-
     <div class="subtitle_list">
+        
+
         <!--<div class="subtitle_wrap">-->
         <!--<span class="progress_bar">|</span>-->
         <!--<span class="subtitle_content">"On the red tiles in my family's den"</span>-->

@@ -1,18 +1,80 @@
+@font-face{
+    font-family:ng;
+    src:url(NanumGothic.eot);
+    src:local(※), url(NanumGothic.woff) format(‘woff’);
+}
+@font-face{
+    font-family: NanumSquareWeb;
+    src: url(NanumSquareR.woff2) format('woff2'),
+        url(NanumSquareR.woff) format('woff'),
+        url(NanumSquareR.ttf) format('truetype'),
+}
+
+/* body{font-family:나눔고딕, NanumGothic, ng} */
+body{font-family: 나눔스퀘어, NanumSquare, NanumSquareWeb}
+
+.checkbox-wrap { cursor: pointer; }
+.checkbox-wrap .check-icon  { 
+    display: inline-block; 
+    width: 30px; 
+    height: 30px; 
+    background: url(../image/repeat_off.png) left center no-repeat; 
+    vertical-align: middle; 
+    transition-duration: .3s; }
+.checkbox-wrap input[type=checkbox] { display: none; }
+.checkbox-wrap input[type=checkbox]:checked + .check-icon { 
+    background-image: url(../image/repeat_on.png); }
+      
+
+
+#logo{
+    width: 100px;
+    height: 100px;
+}
 
 .subtitle_wrap{
-    margin-bottom: 2em;
+    width: 100%;
+    height: auto;
+    /* background-color: #298b63; */
+
 }
 
-.subtitle_wrap .progress_bar {
+/* .subtitle_wrap .progress_bar {
     margin-right: 0.5em;
-}
+    
+} */
 
-.progress_bar {
-    width: 0.5em;
-    height: 2em;
+/* .progress_bar {
+    width: 10px;
+    height: 1em;
+    display: inline-block;
     background-color: #298b63;
     display: inline-block;
+    
     vertical-align: top;
-}
+} 
+*/
 
+.subtitle_content{
+
+    border-left: 10px;
+    border-left-style: solid;
+    border-image: linear-gradient( to bottom,green, blue);
+    border-top-style: none;
+    border-bottom-style: none;
+    border-right-style: none; 
+    border-image-slice: 1;
+
+    background-color: white;
+    /* background: linear-gradient( to bottom,green, blue); */
+    
+    font-size: 18px;
+    font-weight: 600;
+    width: 90%;
+    height: auto;
+    padding: 5px;
+    padding-left: 15px;
+    margin: 15px;
+    margin-left: 5px;
+}
 

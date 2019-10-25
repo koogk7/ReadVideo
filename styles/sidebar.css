@@ -67,8 +67,7 @@ body{font-family: 나눔스퀘어, NanumSquare, NanumSquareWeb}
     float: left;
     border-left: 6px;
     border-left-style: solid;
-    border-image: linear-gradient( to bottom,#599499,#5D919E);
-
+    border-image: linear-gradient( to bottom, #599499, #5D919E);
     border-top-style: none;
     border-bottom-style: none;
     border-right-style: none; 

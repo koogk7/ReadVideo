@@ -1,5 +1,6 @@
 import ShowSubtitle from './service/showSubtitle.js';
 import Subtitle from './entity/Subtitle.js';
+import {CONSTANT} from './common/constant.js';
 
 import DownloadAdmin from './service/download.js';
 
@@ -11,6 +12,7 @@ class ReadVideo {
         console.log("Success Load");
         this.subtitles = [];
         this.subtitleListNode = document.querySelector('.subtitle_list');
+        this.preSubtitle = null;
 
         this.donwloadBtn= document.querySelector('#downloadBtn');
         this.downloadAdmin = new DownloadAdmin();
@@ -81,8 +83,22 @@ class ReadVideo {
             return;
 
         let subtitleId = currentSubtitle[0].id;
-        let subtitleNode = document.querySelector('.subtitle_wrap[data-idx="'+ subtitleId + '"]');
+        let subtitleWrapNode = document.querySelector('.subtitle_wrap[data-idx="'+ subtitleId + '"]');
+        let subtitleContentNode = subtitleWrapNode.querySelector('.subtitle_content');
+
+        // subtitleContentNode.style.borderImage = 'linear-gradient( to bottom,'  +
+        //     CONSTANT.PLAYING_BAR_COLOR + ', ' + CONSTANT.PLAYING_BAR_COLOR + ')';
+        // subtitleContentNode.style.borderImageSlice = '1';
         // 바 색 바꾸기, 이전꺼 되돌려 놓기
+        this.changeBarColor(subtitleContentNode, CONSTANT.PLAYING_BAR_COLOR, CONSTANT.PLAYING_BAR_COLOR);
+
+        if(this.preSubtitle != null && subtitleContentNode !== this.preSubtitle){
+            this.changeBarColor(this.preSubtitle, CONSTANT.DEFAULT_BAR_TOP_COLOR, CONSTANT.DEFAULT_BAR_BOTTOM_COLOR);
+        }
+
+        this.preSubtitle = subtitleContentNode;
+
+        console.log(subtitleContentNode);
     }
 
 
@@ -105,20 +121,17 @@ class ReadVideo {
 
         subtitles.map((item, index) => {
             let subtitleWrapNode = document.createElement('div');
-            // let progressBarNode = document.createElement('div');
             let subtitleContentNode = document.createElement('div');
 
             /*
             Todo 노드 속성 등을 정해줘야함
              */
             subtitleWrapNode.classList.add('subtitle_wrap');
-            // progressBarNode.classList.add('progress_bar');
             subtitleContentNode.classList.add('subtitle_content');
 
             subtitleContentNode.textContent = item.content;
 
             subtitleWrapNode.setAttribute('data-idx', index);
-            // subtitleWrapNode.appendChild(progressBarNode);
             subtitleWrapNode.appendChild(subtitleContentNode);
             this.subtitleListNode.appendChild(subtitleWrapNode);
         })
@@ -130,6 +143,11 @@ class ReadVideo {
         let temp = document.createElement('div');
         temp.textContent = '지원하지 않는 페이지입니다';
         this.subtitleListNode.appendChild(temp);
+    }
+
+    changeBarColor(node, top, bottom){
+        node.style.borderImage = 'linear-gradient( to bottom,'  + top + ', ' + bottom + ')';
+        node.style.borderImageSlice = '1';
     }
 
     whaleEventListener(){

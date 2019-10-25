@@ -12,7 +12,6 @@ class ReadVideo {
         console.log("Success Load");
         this.subtitles = [];
         this.subtitleListNode = document.querySelector('.subtitle_list');
-        this.activeTabId = null;
 
         this.donwloadBtn= document.querySelector('#downloadBtn');
         this.downloadAdmin = new DownloadAdmin();
@@ -57,6 +56,37 @@ class ReadVideo {
         });
     }
 
+    connectWebVideo(){
+        whale.tabs.executeScript({
+            code: `
+            window.showSubtitle.getCurrentPlayTime();    
+      `
+        });
+
+        whale.runtime.onConnect.addListener(port => {
+            if (port.name === `contentChannel`) {
+                // 현재 재생구간 표시
+                port.onMessage.addListener(message => {
+                    this.syncVideo(message);
+                });
+            }
+        });
+    }
+
+    syncVideo(currentTime){
+        let currentSubtitle = this.subtitles.filter(item => {
+            return item.startTime <= currentTime && item.endTime >= currentTime;
+        });
+
+        if(currentSubtitle.length < 1)
+            return;
+
+        let subtitleId = currentSubtitle[0].id;
+        let subtitleNode = document.querySelector('.subtitle_wrap[data-idx="'+ subtitleId + '"]');
+        // 바 색 바꾸기, 이전꺼 되돌려 놓기
+    }
+
+
     transSubtitles(subtitlesText) {
         let paragraphSplit = subtitlesText.split('\n\n');
         let rst  = [];
@@ -74,7 +104,7 @@ class ReadVideo {
     renderSubtitle(subtitles){
         console.log("=====RenderSubtitle====");
 
-        subtitles.map(item => {
+        subtitles.map((item, index) => {
             let subtitleWrapNode = document.createElement('div');
             let progressBarNode = document.createElement('span');
             let subtitleContentNode = document.createElement('span');
@@ -87,6 +117,8 @@ class ReadVideo {
             subtitleContentNode.classList.add('subtitle_content');
 
             subtitleContentNode.textContent = item.content;
+
+            subtitleWrapNode.setAttribute('data-idx', index);
 
             subtitleWrapNode.appendChild(progressBarNode);
             subtitleWrapNode.appendChild(subtitleContentNode);
@@ -132,6 +164,7 @@ class ReadVideo {
                 this.initExecuteCode();
                 this.removeSubtitleList();
                 this.loadSubtitles();
+                this.connectWebVideo();
             }
         }); // 화살표함수는 자체적으로 this를 bind 하지 않음
     }
@@ -139,4 +172,4 @@ class ReadVideo {
 
 }
 
-new ReadVideo();
+export const readVideo = new ReadVideo();

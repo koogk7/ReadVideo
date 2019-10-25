@@ -1,5 +1,9 @@
 export default class ShowSubtitle { // Todo 이름 마음에 안듬
     constructor() {
+        this.port = whale.runtime.connect({name: `contentChannel`});
+        this.port.onMessage.addListener(message => {
+            console.log(message);
+        });
     }
 
     getSubtitles() {
@@ -17,6 +21,17 @@ export default class ShowSubtitle { // Todo 이름 마음에 안듬
 
         return subtitle;
     }
+
+    getCurrentPlayTime(){
+
+        let video = document.querySelector('video');
+
+        video.ontimeupdate = () => {
+            this.port.postMessage(video.currentTime);
+        };
+
+    }
+
 
     hasVideo() {
         let videoTag = document.querySelector('video');

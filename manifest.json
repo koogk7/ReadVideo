@@ -16,10 +16,10 @@
     "default_title": "사이드바앱",      // 선택
     "use_navigation_bar": true       // 선택
   },
-  "background": {
-    "scripts": ["./background.js"],
-    "persistent": false
-  },
+//  "background": {
+//    "scripts": ["./background.js"],
+//    "persistent": false
+//  },
 
   "permissions": [
     "<all_urls>",

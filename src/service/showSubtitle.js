@@ -1,9 +1,7 @@
 export default class ShowSubtitle { // Todo 이름 마음에 안듬
     constructor() {
-        this.port = whale.runtime.connect({name: `contentChannel`});
-        this.port.onMessage.addListener(message => {
-            console.log(message);
-        });
+        this.video = document.querySelector('video');
+        this.syncPort = whale.runtime.connect({name: `readChannel`});
     }
 
     getSubtitles() {
@@ -23,19 +21,18 @@ export default class ShowSubtitle { // Todo 이름 마음에 안듬
     }
 
     getCurrentPlayTime(){
-
-        let video = document.querySelector('video');
-
-        video.ontimeupdate = () => {
-            this.port.postMessage(video.currentTime);
+        this.video.ontimeupdate = () => {
+            this.syncPort.postMessage(this.video.currentTime);
         };
 
     }
 
+    setCurrentPlayTime(changeTime){
+        this.video.currentTime = changeTime;
+    }
 
     hasVideo() {
-        let videoTag = document.querySelector('video');
-        return videoTag !== undefined;
+        return this.video !== undefined;
     }
 
     requestSubtitle(address) {

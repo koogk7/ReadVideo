@@ -1,16 +1,16 @@
-// whale.runtime.onConnect.addListener(port => {
-//     if (port.name === `contentChannel`) {
+// whale.runtime.onConnect.addListener(syncPort => {
+//     if (syncPort.name === `contentChannel`) {
 //         // 현재 재생구간 표시
-//         // port.onMessage.addListener(message => {
-//         //     port.postMessage(message);
+//         // syncPort.onMessage.addListener(message => {
+//         //     syncPort.postMessage(message);
 //         // });
 //     }
 //
-//     if (port.name === `selectChannel`) {
+//     if (syncPort.name === `selectChannel`) {
 //         // 영상구간이동
 //     }
 //
-//     if (port.name === `selectChannel`) {
+//     if (syncPort.name === `selectChannel`) {
 //         // 영상구간이동
 //     }
 //

@@ -13,12 +13,11 @@ class ReadVideo {
         this.subtitles = [];
         this.subtitleListNode = document.querySelector('.subtitle_list');
         this.preSubtitle = null;
+        this.whaleEventListener();
 
         this.donwloadBtn= document.querySelector('#downloadBtn');
         this.downloadAdmin = new DownloadAdmin();
         this.donwloadBtn.addEventListener('click', this.downloadAdmin.downloadText);
-
-        this.whaleEventListener();
 
         console.log("Success Init");
     }
@@ -60,18 +59,18 @@ class ReadVideo {
     connectWebVideo(){
         whale.tabs.executeScript({
             code: `
-            window.showSubtitle.getCurrentPlayTime();    
-      `
+                window.showSubtitle.getCurrentPlayTime();
+            `
         });
 
         whale.runtime.onConnect.addListener(port => {
-            if (port.name === `contentChannel`) {
-                // 현재 재생구간 표시
+            if (port.name === `readChannel`) {
                 port.onMessage.addListener(message => {
                     this.syncVideo(message);
                 });
             }
         });
+
     }
 
     syncVideo(currentTime){
@@ -86,21 +85,17 @@ class ReadVideo {
         let subtitleWrapNode = document.querySelector('.subtitle_wrap[data-idx="'+ subtitleId + '"]');
         let subtitleContentNode = subtitleWrapNode.querySelector('.subtitle_content');
 
-        // subtitleContentNode.style.borderImage = 'linear-gradient( to bottom,'  +
-        //     CONSTANT.PLAYING_BAR_COLOR + ', ' + CONSTANT.PLAYING_BAR_COLOR + ')';
-        // subtitleContentNode.style.borderImageSlice = '1';
         // 바 색 바꾸기, 이전꺼 되돌려 놓기
-        this.changeBarColor(subtitleContentNode, CONSTANT.PLAYING_BAR_COLOR, CONSTANT.PLAYING_BAR_COLOR);
+        ReadVideo.changeBarColor(subtitleContentNode, CONSTANT.PLAYING_BAR_COLOR, CONSTANT.PLAYING_BAR_COLOR);
 
         if(this.preSubtitle != null && subtitleContentNode !== this.preSubtitle){
-            this.changeBarColor(this.preSubtitle, CONSTANT.DEFAULT_BAR_TOP_COLOR, CONSTANT.DEFAULT_BAR_BOTTOM_COLOR);
+            ReadVideo.changeBarColor(this.preSubtitle, CONSTANT.DEFAULT_BAR_TOP_COLOR, CONSTANT.DEFAULT_BAR_BOTTOM_COLOR);
         }
 
         this.preSubtitle = subtitleContentNode;
 
         console.log(subtitleContentNode);
     }
-
 
     transSubtitles(subtitlesText) {
         let paragraphSplit = subtitlesText.split('\n\n');
@@ -122,16 +117,14 @@ class ReadVideo {
         subtitles.map((item, index) => {
             let subtitleWrapNode = document.createElement('div');
             let subtitleContentNode = document.createElement('div');
-
-            /*
-            Todo 노드 속성 등을 정해줘야함
-             */
+            
             subtitleWrapNode.classList.add('subtitle_wrap');
             subtitleContentNode.classList.add('subtitle_content');
 
             subtitleContentNode.textContent = item.content;
-
+            subtitleWrapNode.addEventListener('click', this.movePlayTime.bind(this));
             subtitleWrapNode.setAttribute('data-idx', index);
+
             subtitleWrapNode.appendChild(subtitleContentNode);
             this.subtitleListNode.appendChild(subtitleWrapNode);
         })
@@ -145,7 +138,17 @@ class ReadVideo {
         this.subtitleListNode.appendChild(temp);
     }
 
-    changeBarColor(node, top, bottom){
+    movePlayTime(event){
+        let subtitleId = event.currentTarget.getAttribute('data-idx');
+
+        whale.tabs.executeScript({
+            code: `
+                window.showSubtitle.setCurrentPlayTime(${this.subtitles[subtitleId].startTime});
+            `
+        });
+    }
+
+    static changeBarColor(node, top, bottom){
         node.style.borderImage = 'linear-gradient( to bottom,'  + top + ', ' + bottom + ')';
         node.style.borderImageSlice = '1';
     }

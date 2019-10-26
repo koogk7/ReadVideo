@@ -2,6 +2,9 @@ export default class ShowSubtitle { // Todo 이름 마음에 안듬
     constructor() {
         this.video = document.querySelector('video');
         this.syncPort = whale.runtime.connect({name: `readChannel`});
+        this.repeatMode = false;
+        this.repeatStartTime = null;
+        this.repeatEndTime = null;
     }
 
     getSubtitles() {
@@ -23,8 +26,10 @@ export default class ShowSubtitle { // Todo 이름 마음에 안듬
     getCurrentPlayTime(){
         this.video.ontimeupdate = () => {
             this.syncPort.postMessage(this.video.currentTime);
+            if(this.repeatMode && this.repeatEndTime <= this.video.currentTime){
+                this.video.currentTime = this.repeatStartTime;
+            }
         };
-
     }
 
     setCurrentPlayTime(changeTime){

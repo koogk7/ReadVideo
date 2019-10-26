@@ -7,19 +7,22 @@ import DownloadAdmin from './service/download.js';
 class ReadVideo {
     /* Todo
      */
-
     constructor() {
-        console.log("Success Load");
         this.subtitles = [];
         this.subtitleListNode = document.querySelector('.subtitle_list');
         this.preSubtitle = null;
-        this.whaleEventListener();
+
+        this.repeatMode = false;
+        this.repeatStartId = null;
+        this.repeatEndId = null;
+        this.repeatBtn  = document.querySelector('#repeatBtn');
+        this.repeatBtn.addEventListener('click', this.repeatBtnClickHandler.bind(this));
 
         this.donwloadBtn= document.querySelector('#downloadBtn');
         this.downloadAdmin = new DownloadAdmin();
         this.donwloadBtn.addEventListener('click', this.downloadAdmin.downloadText);
 
-        console.log("Success Init");
+        this.whaleEventListener();
     }
 
     initExecuteCode() {
@@ -85,7 +88,6 @@ class ReadVideo {
         let subtitleWrapNode = document.querySelector('.subtitle_wrap[data-idx="'+ subtitleId + '"]');
         let subtitleContentNode = subtitleWrapNode.querySelector('.subtitle_content');
 
-        // 바 색 바꾸기, 이전꺼 되돌려 놓기
         ReadVideo.changeBarColor(subtitleContentNode, CONSTANT.PLAYING_BAR_COLOR, CONSTANT.PLAYING_BAR_COLOR);
 
         if(this.preSubtitle != null && subtitleContentNode !== this.preSubtitle){
@@ -93,8 +95,6 @@ class ReadVideo {
         }
 
         this.preSubtitle = subtitleContentNode;
-
-        console.log(subtitleContentNode);
     }
 
     transSubtitles(subtitlesText) {
@@ -117,12 +117,14 @@ class ReadVideo {
         subtitles.map((item, index) => {
             let subtitleWrapNode = document.createElement('div');
             let subtitleContentNode = document.createElement('div');
-            
+
             subtitleWrapNode.classList.add('subtitle_wrap');
             subtitleContentNode.classList.add('subtitle_content');
 
             subtitleContentNode.textContent = item.content;
+
             subtitleWrapNode.addEventListener('click', this.movePlayTime.bind(this));
+            subtitleWrapNode.addEventListener('click', this.repeatModeClickHandler.bind(this));
             subtitleWrapNode.setAttribute('data-idx', index);
 
             subtitleWrapNode.appendChild(subtitleContentNode);
@@ -139,11 +141,55 @@ class ReadVideo {
     }
 
     movePlayTime(event){
+        if(this.repeatMode)
+            return;
+
         let subtitleId = event.currentTarget.getAttribute('data-idx');
 
         whale.tabs.executeScript({
             code: `
                 window.showSubtitle.setCurrentPlayTime(${this.subtitles[subtitleId].startTime});
+            `
+        });
+    }
+
+    repeatBtnClickHandler(){
+        // Todo 이미지 바꿔주기
+        if(this.repeatMode){
+            let starTime = this.subtitles[this.repeatStartId].startTime;
+            let endTime = this.subtitles[this.repeatEndId].endTime;
+            this.repeatPlayTime(starTime, endTime);
+        } else{
+            this.repeatPlayTime(null, null);
+        }
+        this.repeatMode = !this.repeatMode;
+    }
+
+    repeatModeClickHandler(event){
+        if(!this.repeatMode)
+            return;
+
+        let subtitleId = event.currentTarget.getAttribute('data-idx');
+
+        if(this.repeatStartId == null || this.repeatStartId > subtitleId){
+            this.repeatStartId = subtitleId;
+        }
+
+        if(this.repeatEndId == null || this.repeatEndId < subtitleId){
+            this.repeatEndId = subtitleId;
+        }
+    }
+
+    repeatPlayTime(startTime, endTime){
+        if(startTime == null)
+            return;
+
+        whale.tabs.executeScript({
+            code: `
+                window.showSubtitle.repeatMode = ${this.repeatMode};
+                window.showSubtitle.repeatStartTime = ${startTime};
+                window.showSubtitle.repeatEndTime = ${endTime};
+                window.showSubtitle.video.currentTime = ${startTime};
             `
         });
     }

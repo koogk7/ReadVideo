@@ -8,6 +8,7 @@ export default class downloadAdmin{
         let text = "";
         for (let i = 0; i < list.length; i++) {
             text += list[i].textContent;
+            text += '\n';
         }
         let data = new Blob([text], {type: 'text/plain'});
 

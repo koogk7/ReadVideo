@@ -13,23 +13,46 @@
 /* body{font-family:나눔고딕, NanumGothic, ng} */
 body{font-family: 나눔스퀘어, NanumSquare, NanumSquareWeb}
 
-.checkbox-wrap { cursor: pointer; }
-.checkbox-wrap .check-icon  { 
-    display: inline-block; 
-    width: 30px; 
-    height: 30px; 
-    background: url(../image/repeat_off.png) left center no-repeat; 
-    vertical-align: middle; 
-    transition-duration: .3s; }
-.checkbox-wrap input[type=checkbox] { display: none; }
-.checkbox-wrap input[type=checkbox]:checked + .check-icon { 
-    background-image: url(../image/repeat_on.png); }
-      
-
-
+/*       
 #logo{
     width: 100px;
     height: 100px;
+} */
+#logo_img{
+    width: 220px;
+    height: 70px;
+}
+
+.btn{
+    width: 30px;
+    height: 30px;
+}
+.icon_img{
+    width: 30px;
+    height: 30px;
+}
+
+
+.repeatBox input[type="checkbox"]{
+    display: none;
+}
+.repeatBox label{
+	width:30px;
+	height:30px;
+}
+.repeatBox input[type="checkbox"] + label .repeat_img {
+	padding:0 0 0 30px;
+	height:30px;
+	background:url("../image/repeat_off.png") no-repeat;
+	cursor:pointer;
+}
+.repeatBox input[type="checkbox"]:checked + label .repeat_img{
+    background:url("../image/repeat_on.png") no-repeat;
+
+}
+
+.top_bar{
+    margin-bottom: 30px;
 }
 
 .subtitle_wrap{
@@ -39,25 +62,10 @@ body{font-family: 나눔스퀘어, NanumSquare, NanumSquareWeb}
 
 }
 
-/* .subtitle_wrap .progress_bar {
-    margin-right: 0.5em;
-    
-} */
-
-/* .progress_bar {
-    width: 10px;
-    height: 1em;
-    display: inline-block;
-    background-color: #298b63;
-    display: inline-block;
-    
-    vertical-align: top;
-} 
-*/
-
 .subtitle_content{
 
-    border-left: 10px;
+    float: left;
+    border-left: 6px;
     border-left-style: solid;
     border-image: linear-gradient( to bottom, #599499, #5D919E);
     border-top-style: none;
@@ -72,9 +80,9 @@ body{font-family: 나눔스퀘어, NanumSquare, NanumSquareWeb}
     font-weight: 600;
     width: 90%;
     height: auto;
-    padding: 5px;
-    padding-left: 15px;
-    margin: 15px;
+    padding-left: 10px;
     margin-left: 5px;
+    margin-right: 10px;
+    margin-bottom: 20px;
 }
 

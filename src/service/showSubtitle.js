@@ -8,19 +8,28 @@ export default class ShowSubtitle { // Todo 이름 마음에 안듬
     }
 
     getSubtitles() {
-        let track = document.querySelector('track');
-        let trackAddress = track == null ? '' : track.getAttribute('src');
+        let trackList = document.querySelectorAll('track');
+        console.log(trackList);
+        // let trackAddress = trackList == null ? '' : trackList.getAttribute('src');
 
-        if (track == null) {
+        if (trackList == null) {
             console.log("페이지에서 자막을 찾을 수 없습니다.");
             return null;
         }
-        console.log("자막 추출 성공 : " + track.getAttribute('src'));
 
-        let subtitle = this.requestSubtitle(trackAddress);
-        console.log(subtitle);
+        let subtitleList = [];
 
-        return subtitle;
+        trackList.forEach(track => {
+            let subtitleAddress = track.getAttribute('src');
+            let lang = track.getAttribute('label');
+
+            subtitleList.push([lang, this.requestSubtitle(subtitleAddress)]);
+        });
+
+        // console.log("자막 추출 성공 : " + trackList);
+        console.log(subtitleList);
+
+        return subtitleList;
     }
 
     getCurrentPlayTime(){

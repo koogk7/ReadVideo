@@ -9,7 +9,9 @@ class ReadVideo {
     /* Todo
      */
     constructor() {
-        this.subtitles = [];
+        this.allSubtitles = {};
+        this.currentSubtitles = [];
+        this.currentLang = null;
         this.subtitleListNode = document.querySelector('.subtitle_list');
         this.preSubtitle = null;
 
@@ -37,6 +39,11 @@ class ReadVideo {
         window.showSubtitle = new ${ShowSubtitle}();
       `
         });
+
+        let searchBtn = document.querySelector('#searchBtn');
+        let repeatImg = document.querySelector('#repeatBtn img');
+
+        repeatImg.setAttribute('src', CONSTANT.BASE_IMG_URL + CONSTANT.REPEAT_OFF_IMG);
     }
 
     removeSubtitleList(){
@@ -53,13 +60,23 @@ class ReadVideo {
       `
         }, (result) => { //  실행된 코드 마지막 결과를 받아온다.
             console.log(result);
-            if(result == null){
+            if(result == null || result[0] == null){
                 console.log("자막을 가져오는데 오류가 발생했습니다.");
                 this.renderNoSupport();
             }
             else{
-                this.subtitles = this.transSubtitles(result[0]);
-                this.renderSubtitle(this.subtitles);
+                let response = result[0];
+                let langIdx = 0;
+                let contentIdx = 1;
+
+                this.currentLang = response[0][langIdx];
+                this.currentSubtitles = this.transSubtitles(response[0][contentIdx]);
+
+                response.map(subtitleItem =>{
+                    this.allSubtitles[subtitleItem[langIdx]] = subtitleItem[contentIdx];
+                });
+
+                this.renderSubtitle(this.currentSubtitles);
             }
         });
     }
@@ -82,7 +99,7 @@ class ReadVideo {
     }
 
     syncVideo(currentTime){
-        let currentSubtitle = this.subtitles.filter(item => {
+        let currentSubtitle = this.currentSubtitles.filter(item => {
             return item.startTime <= currentTime && item.endTime >= currentTime;
         });
 
@@ -117,7 +134,6 @@ class ReadVideo {
     }
 
     renderSubtitle(subtitles){
-        console.log("=====RenderSubtitle====");
 
         subtitles.map((item, index) => {
             let subtitleWrapNode = document.createElement('div');
@@ -153,7 +169,7 @@ class ReadVideo {
 
         whale.tabs.executeScript({
             code: `
-                window.showSubtitle.setCurrentPlayTime(${this.subtitles[subtitleId].startTime});
+                window.showSubtitle.setCurrentPlayTime(${this.currentSubtitles[subtitleId].startTime});
             `
         });
     }
@@ -201,8 +217,7 @@ class ReadVideo {
     }
 
     repeatPlayTime(startTime, endTime){
-        // if(startTime == null)
-        //     return;
+
         whale.tabs.executeScript({
             code: `
                 window.showSubtitle.repeatMode = ${this.repeatMode};
@@ -219,13 +234,13 @@ class ReadVideo {
     }
 
     completeToSelectRepeat(){
-        let starTime = this.subtitles[this.repeatStartId].startTime;
-        let endTime = this.subtitles[this.repeatEndId].endTime;
+        let starTime = this.currentSubtitles[this.repeatStartId].startTime;
+        let endTime = this.currentSubtitles[this.repeatEndId].endTime;
         this.repeatPlayTime(starTime, endTime);
     }
 
     setRepeatNodeStyle(startId, endId, initFlag){
-        let selectedNodes = this.subtitles.slice(startId, endId*1 + 1);
+        let selectedNodes = this.currentSubtitles.slice(startId, endId*1 + 1);
 
         selectedNodes.map(subtitle => {
             let node = document.querySelector('.subtitle_wrap[data-idx="'+
@@ -238,7 +253,6 @@ class ReadVideo {
 
     }
 
-
     static changeBarColor(node, top, bottom){
         node.style.borderImage = 'linear-gradient( to bottom,'  + top + ', ' + bottom + ')';
         node.style.borderImageSlice = '1';
@@ -246,10 +260,9 @@ class ReadVideo {
 
     static toggleRepeatIcon(isOn){
         let iconNode = document.querySelector('#repeatBtn img');
-        let baseImgUrl = './image/';
-        let iconUrl = isOn ? 'repeat_on.png' : 'repeat_off.png';
+        let iconUrl = isOn ? CONSTANT.REPEAT_ON_IMG : CONSTANT.REPEAT_OFF_IMG;
 
-        iconNode.setAttribute('src', baseImgUrl + iconUrl);
+        iconNode.setAttribute('src', CONSTANT.BASE_IMG_URL + iconUrl);
     }
 
 

@@ -9,7 +9,9 @@ class ReadVideo {
     /* Todo
      */
     constructor() {
-        this.subtitles = [];
+        this.allSubtitles = {};
+        this.currentSubtitles = [];
+        this.currentLang = null;
         this.subtitleListNode = document.querySelector('.subtitle_list');
         this.preSubtitle = null;
 
@@ -63,8 +65,18 @@ class ReadVideo {
                 this.renderNoSupport();
             }
             else{
-                this.subtitles = this.transSubtitles(result[0]);
-                this.renderSubtitle(this.subtitles);
+                let response = result[0];
+                let langIdx = 0;
+                let contentIdx = 1;
+
+                this.currentLang = response[0][langIdx];
+                this.currentSubtitles = this.transSubtitles(response[0][contentIdx]);
+
+                response.map(subtitleItem =>{
+                    this.allSubtitles[subtitleItem[langIdx]] = subtitleItem[contentIdx];
+                });
+
+                this.renderSubtitle(this.currentSubtitles);
             }
         });
     }
@@ -87,7 +99,7 @@ class ReadVideo {
     }
 
     syncVideo(currentTime){
-        let currentSubtitle = this.subtitles.filter(item => {
+        let currentSubtitle = this.currentSubtitles.filter(item => {
             return item.startTime <= currentTime && item.endTime >= currentTime;
         });
 
@@ -122,7 +134,6 @@ class ReadVideo {
     }
 
     renderSubtitle(subtitles){
-        console.log("=====RenderSubtitle====");
 
         subtitles.map((item, index) => {
             let subtitleWrapNode = document.createElement('div');
@@ -158,7 +169,7 @@ class ReadVideo {
 
         whale.tabs.executeScript({
             code: `
-                window.showSubtitle.setCurrentPlayTime(${this.subtitles[subtitleId].startTime});
+                window.showSubtitle.setCurrentPlayTime(${this.currentSubtitles[subtitleId].startTime});
             `
         });
     }
@@ -206,8 +217,7 @@ class ReadVideo {
     }
 
     repeatPlayTime(startTime, endTime){
-        // if(startTime == null)
-        //     return;
+
         whale.tabs.executeScript({
             code: `
                 window.showSubtitle.repeatMode = ${this.repeatMode};
@@ -224,13 +234,13 @@ class ReadVideo {
     }
 
     completeToSelectRepeat(){
-        let starTime = this.subtitles[this.repeatStartId].startTime;
-        let endTime = this.subtitles[this.repeatEndId].endTime;
+        let starTime = this.currentSubtitles[this.repeatStartId].startTime;
+        let endTime = this.currentSubtitles[this.repeatEndId].endTime;
         this.repeatPlayTime(starTime, endTime);
     }
 
     setRepeatNodeStyle(startId, endId, initFlag){
-        let selectedNodes = this.subtitles.slice(startId, endId*1 + 1);
+        let selectedNodes = this.currentSubtitles.slice(startId, endId*1 + 1);
 
         selectedNodes.map(subtitle => {
             let node = document.querySelector('.subtitle_wrap[data-idx="'+
@@ -242,7 +252,6 @@ class ReadVideo {
         });
 
     }
-
 
     static changeBarColor(node, top, bottom){
         node.style.borderImage = 'linear-gradient( to bottom,'  + top + ', ' + bottom + ')';

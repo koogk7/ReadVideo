@@ -3,6 +3,7 @@ import Subtitle from './entity/Subtitle.js';
 import {CONSTANT} from './common/constant.js';
 
 import DownloadAdmin from './service/download.js';
+import SearchAdmin from './service/search.js';
 
 class ReadVideo {
     /* Todo
@@ -21,6 +22,10 @@ class ReadVideo {
         this.donwloadBtn= document.querySelector('#downloadBtn');
         this.downloadAdmin = new DownloadAdmin();
         this.donwloadBtn.addEventListener('click', this.downloadAdmin.downloadText);
+
+        this.searchBtn = document.querySelector('#searchBtn');
+        this.searchAdmin = new SearchAdmin();
+        this.searchBtn.addEventListener('click', this.searchAdmin.searchString);
 
         this.whaleEventListener();
     }

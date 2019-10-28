@@ -24,6 +24,7 @@ body{font-family: 나눔스퀘어, NanumSquare, NanumSquareWeb}
 }
 
 .btn{
+    display: none;
     width: 30px;
     height: 30px;
 }
@@ -32,24 +33,6 @@ body{font-family: 나눔스퀘어, NanumSquare, NanumSquareWeb}
     height: 30px;
 }
 
-
-.repeatBox input[type="checkbox"]{
-    display: none;
-}
-.repeatBox label{
-	width:30px;
-	height:30px;
-}
-.repeatBox input[type="checkbox"] + label .repeat_img {
-	padding:0 0 0 30px;
-	height:30px;
-	background:url("../image/repeat_off.png") no-repeat;
-	cursor:pointer;
-}
-.repeatBox input[type="checkbox"]:checked + label .repeat_img{
-    background:url("../image/repeat_on.png") no-repeat;
-
-}
 
 .top_bar{
     margin-bottom: 30px;

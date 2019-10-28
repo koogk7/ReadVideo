@@ -18,7 +18,7 @@ export default class downloadAdmin{
 
         document.getElementById('downloadBtn').href = url;
 
-        setTimeout(function(){
+        setTimeout(()=>{
             document.getElementById("download_img").setAttribute('src', "./image/download_off.png");
         },100);
 

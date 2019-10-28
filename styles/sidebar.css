@@ -1,8 +1,4 @@
-@font-face{
-    font-family:ng;
-    src:url(NanumGothic.eot);
-    src:local(※), url(NanumGothic.woff) format(‘woff’);
-}
+
 @font-face{
     font-family: NanumSquareWeb;
     src: url(NanumSquareR.woff2) format('woff2'),
@@ -10,19 +6,42 @@
         url(NanumSquareR.ttf) format('truetype'),
 }
 
-/* body{font-family:나눔고딕, NanumGothic, ng} */
+
 body{font-family: 나눔스퀘어, NanumSquare, NanumSquareWeb}
 
-/*       
-#logo{
-    width: 100px;
-    height: 100px;
-} */
-#logo_img{
-    width: 220px;
-    height: 70px;
+
+header{
+    margin-top: 15px;
+    margin-left: 10px;
+    position: fixed;
+    background-color: white;
+    top:0px;
+    height: 110px;
+    width: 100%;
+    z-index: 1;
+}
+.top_bar{
+    margin-left: 10px;
+    position: fixed;
+    top: 70px;   
+    left: 10px;
+}
+section{
+    position: absolute;
+}
+.subtitle_list{
+    position: relative;
+    top: 140px;
+    overflow: hidden;
 }
 
+#logo_img{
+    width: 161.33px;
+    height: 40px;
+}
+#searchText{
+    background-image: url(../image/search_on.png);
+}
 .btn{
     width: 30px;
     height: 30px;
@@ -36,6 +55,30 @@ body{font-family: 나눔스퀘어, NanumSquare, NanumSquareWeb}
     width: 30px;
     height: 30px;
 }
+
+
+.highlighting{
+
+    /*
+    주의점
+    1. 줄간격 : 하이라이팅 된 부분 공간이 넓어지면서 다른 글자를 가림
+    2. 테두리가 매끄럽지 못함
+    3. 색깔 수정: 반복재생이랑 겹치면 티가 안남
+    */
+
+    border: 5px;
+    border-style: solid; 
+    border-radius: 30px;
+    border-image-slice: 1;
+    border-image:linear-gradient(to bottom,  #599499, #5D919E);
+    background: linear-gradient(to bottom, #599499, #5D919E);
+    box-shadow: 2px 2px 2px 2px gray;
+
+    color: white;
+    padding-top: 3px;
+    /* vertical-align: center; */
+}
+
 
 
 .repeatBox input[type="checkbox"]{
@@ -95,8 +138,3 @@ body{font-family: 나눔스퀘어, NanumSquare, NanumSquareWeb}
     margin-right: 10px;
     margin-bottom: 20px;
 }
-
-/* .seared{
-    border-image
-
-} */

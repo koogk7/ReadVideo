@@ -15,16 +15,19 @@ export default class searchAdmin{
         for(let i = 0; i < list.length; i++){
 
             if(list[i].innerHTML.toUpperCase().indexOf(value) > -1){
-                list[i].style.display = "flex";
+                // list[i].style.display = "flex";
+
+                list[i].classList.toggle('highlighting');
+                
                 //글자를 쪼개서 그 단어만 하이라이팅 해야함.
                 console.log(list[i].innerHTML.toUpperCase().indexOf(value));
             }
             else{
-                list[i].style.display = "none";
+                // list[i].style.display = "none";
                 //아무일도 안함.
             }
         }
-        setTimeout(function(){
+        setTimeout(()=>{
             document.getElementById("search_img").setAttribute('src', "./image/search_off.png");
         },100);
     }

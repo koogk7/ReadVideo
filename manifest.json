@@ -11,7 +11,7 @@
   "sidebar_action": {
     "default_page": "sidebar.html",  // 필수
     "default_icon": {                // 필수
-      "16": "images/icon16.png"
+      "16": "./image/main_logo.png"
     },
     "default_title": "사이드바앱",      // 선택
     "use_navigation_bar": true       // 선택

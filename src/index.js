@@ -37,6 +37,11 @@ class ReadVideo {
         window.showSubtitle = new ${ShowSubtitle}();
       `
         });
+
+        let searchBtn = document.querySelector('#searchBtn');
+        let repeatImg = document.querySelector('#repeatBtn img');
+
+        repeatImg.setAttribute('src', CONSTANT.BASE_IMG_URL + CONSTANT.REPEAT_OFF_IMG);
     }
 
     removeSubtitleList(){
@@ -246,10 +251,9 @@ class ReadVideo {
 
     static toggleRepeatIcon(isOn){
         let iconNode = document.querySelector('#repeatBtn img');
-        let baseImgUrl = './image/';
-        let iconUrl = isOn ? 'repeat_on.png' : 'repeat_off.png';
+        let iconUrl = isOn ? CONSTANT.REPEAT_ON_IMG : CONSTANT.REPEAT_OFF_IMG;
 
-        iconNode.setAttribute('src', baseImgUrl + iconUrl);
+        iconNode.setAttribute('src', CONSTANT.BASE_IMG_URL + iconUrl);
     }
 
 

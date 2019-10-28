@@ -58,7 +58,7 @@ class ReadVideo {
       `
         }, (result) => { //  실행된 코드 마지막 결과를 받아온다.
             console.log(result);
-            if(result == null){
+            if(result == null || result[0] == null){
                 console.log("자막을 가져오는데 오류가 발생했습니다.");
                 this.renderNoSupport();
             }

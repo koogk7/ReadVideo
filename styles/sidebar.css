@@ -51,6 +51,11 @@ body{font-family: 나눔스퀘어, NanumSquare, NanumSquareWeb}
 
 }
 
+.subtitle_wrap .repeatSelect {
+    background-color: #5D919E !important;
+    color: white;
+}
+
 .top_bar{
     margin-bottom: 30px;
 }

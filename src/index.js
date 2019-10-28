@@ -154,50 +154,99 @@ class ReadVideo {
     }
 
     repeatBtnClickHandler(){
-        // Todo 이미지 바꿔주기
-        if(this.repeatMode){
-            let starTime = this.subtitles[this.repeatStartId].startTime;
-            let endTime = this.subtitles[this.repeatEndId].endTime;
-            this.repeatPlayTime(starTime, endTime);
-        } else{
-            this.repeatPlayTime(null, null);
-        }
         this.repeatMode = !this.repeatMode;
+
+        if(!this.repeatMode){ // 초기화
+            this.setRepeatNodeStyle(this.repeatStartId, this.repeatEndId, false);
+            this.repeatPlayTime(null, null);
+            this.repeatStartId = null;
+            this.repeatEndId = null;
+        }
+        ReadVideo.toggleRepeatIcon(this.repeatMode);
     }
 
     repeatModeClickHandler(event){
-        if(!this.repeatMode)
+        let subtitleNode = event.currentTarget.querySelector('.subtitle_content');
+
+        if(!this.repeatMode){
+            if(subtitleNode.classList.contains('repeatSelect')){
+                subtitleNode.classList.remove('repeatSelect');
+            }
             return;
+        }
 
         let subtitleId = event.currentTarget.getAttribute('data-idx');
+        let isOneRepeat = this.repeatStartId === subtitleId && this.repeatEndId == null;
+        let isInitEndId = this.repeatStartId != null && this.repeatEndId == null;
+        let isUpdateEndId = this.repeatEndId < subtitleId;
 
         if(this.repeatStartId == null || this.repeatStartId > subtitleId){
             this.repeatStartId = subtitleId;
         }
 
-        if(this.repeatEndId == null || this.repeatEndId < subtitleId){
+        if(isOneRepeat || isInitEndId || isUpdateEndId){
             this.repeatEndId = subtitleId;
         }
+
+        if(this.repeatStartId != null && this.repeatEndId != null){
+            this.completeToSelectRepeat();
+        }
+
+        this.setRepeatNodeStyle(this.repeatStartId, this.repeatEndId, true);
     }
 
     repeatPlayTime(startTime, endTime){
-        if(startTime == null)
-            return;
-
+        // if(startTime == null)
+        //     return;
         whale.tabs.executeScript({
             code: `
                 window.showSubtitle.repeatMode = ${this.repeatMode};
                 window.showSubtitle.repeatStartTime = ${startTime};
                 window.showSubtitle.repeatEndTime = ${endTime};
-                window.showSubtitle.video.currentTime = ${startTime};
+                console.log(window.showSubtitle.repeatMode);
+                if(window.showSubtitle.repeatMode){
+                    window.showSubtitle.video.currentTime = ${startTime};
+                    window.showSubtitle.video.play();
+                }
+                     
             `
         });
     }
+
+    completeToSelectRepeat(){
+        let starTime = this.subtitles[this.repeatStartId].startTime;
+        let endTime = this.subtitles[this.repeatEndId].endTime;
+        this.repeatPlayTime(starTime, endTime);
+    }
+
+    setRepeatNodeStyle(startId, endId, initFlag){
+        let selectedNodes = this.subtitles.slice(startId, endId*1 + 1);
+
+        selectedNodes.map(subtitle => {
+            let node = document.querySelector('.subtitle_wrap[data-idx="'+
+                subtitle.id + '"]' + ' .subtitle_content');
+            if(initFlag)
+                node.classList.add('repeatSelect');
+            else
+                node.classList.remove('repeatSelect');
+        });
+
+    }
+
 
     static changeBarColor(node, top, bottom){
         node.style.borderImage = 'linear-gradient( to bottom,'  + top + ', ' + bottom + ')';
         node.style.borderImageSlice = '1';
     }
+
+    static toggleRepeatIcon(isOn){
+        let iconNode = document.querySelector('#repeatBtn img');
+        let baseImgUrl = './image/';
+        let iconUrl = isOn ? 'repeat_on.png' : 'repeat_off.png';
+
+        iconNode.setAttribute('src', baseImgUrl + iconUrl);
+    }
+
 
     whaleEventListener(){
 
@@ -215,6 +264,7 @@ class ReadVideo {
             this.initExecuteCode();
             this.removeSubtitleList();
             this.loadSubtitles();
+            this.connectWebVideo();
         });
 
         // 탭이 종료되었을때
@@ -223,15 +273,15 @@ class ReadVideo {
         });
 
         // 사이드바가 활성화 되었을때
-        document.addEventListener('visibilitychange', ()=>{
-            if (document.visibilityState === `visible`) {
-                // 사이드바가 열렸을 때
-                this.initExecuteCode();
-                this.removeSubtitleList();
-                this.loadSubtitles();
-                this.connectWebVideo();
-            }
-        }); // 화살표함수는 자체적으로 this를 bind 하지 않음
+        // document.addEventListener('visibilitychange', ()=>{
+        //     if (document.visibilityState === `visible`) {
+        //         // 사이드바가 열렸을 때
+        //         this.initExecuteCode();
+        //         this.removeSubtitleList();
+        //         this.loadSubtitles();
+        //         this.connectWebVideo();
+        //     }
+        // }); // 화살표함수는 자체적으로 this를 bind 하지 않음
     }
 
 

@@ -24,10 +24,14 @@ body{font-family: 나눔스퀘어, NanumSquare, NanumSquareWeb}
 }
 
 .btn{
-    display: none;
     width: 30px;
     height: 30px;
 }
+
+#searchBtn{
+    display: none;
+}
+
 .icon_img{
     width: 30px;
     height: 30px;
@@ -92,3 +96,7 @@ body{font-family: 나눔스퀘어, NanumSquare, NanumSquareWeb}
     margin-bottom: 20px;
 }
 
+/* .seared{
+    border-image
+
+} */

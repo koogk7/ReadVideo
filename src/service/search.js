@@ -45,13 +45,21 @@ export default class SearchAdmin{
     static highlightWord = (subtitleNode, keyword) => {
         let pattern = new RegExp(keyword, 'gi');
         let originKeyword = subtitleNode.textContent.match(pattern);
+        let matchChecker = 'ewdwq^&1sd';
         let highlightNode = originKeyword.map(keyword => {
-            return '<span class="highlighting">' + keyword + '</span>';
+            return '<span class="highlighting">' + matchChecker + '</span>';
         });
 
         highlightNode.map( (node, idx) => {
-            subtitleNode.innerHTML = subtitleNode.textContent.replace(originKeyword[idx], highlightNode);
-        })
+            let p = new RegExp(originKeyword[idx], 'i');
+            subtitleNode.textContent = subtitleNode.textContent.replace(p, node);
+        });
+
+        originKeyword.map(keyword => {
+            subtitleNode.textContent = subtitleNode.textContent.replace(matchChecker, keyword);
+        });
+
+        subtitleNode.innerHTML = subtitleNode.textContent;
 
     };
 

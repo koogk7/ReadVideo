@@ -79,6 +79,10 @@ section{
     /* vertical-align: center; */
 }
 
+.hideSubtitle{
+    display: none;
+}
+
 
 
 .repeatBox input[type="checkbox"]{

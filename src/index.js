@@ -9,9 +9,9 @@ class ReadVideo {
     /* Todo
      */
     constructor() {
-        this.allSubtitles = {};
-        this.currentSubtitles = [];
-        this.currentLang = null;
+        this.allSubtitles = {}; // 다국어 자막 전체 저장
+        this.currentSubtitles = []; // 현재 선택 자막
+        this.currentLang = null; // 현재 선택 자막 언어
         this.subtitleListNode = document.querySelector('.subtitle_list');
         this.preSubtitle = null;
 
@@ -26,8 +26,11 @@ class ReadVideo {
         this.donwloadBtn.addEventListener('click', this.downloadAdmin.downloadText);
 
         this.searchBtn = document.querySelector('#searchBtn');
+        this.searchText = document.querySelector('#searchText');
         this.searchAdmin = new SearchAdmin();
         this.searchBtn.addEventListener('click', this.searchAdmin.searchString);
+        this.searchText.addEventListener('keydown', this.searchAdmin.enterSearchHandler);
+
 
         this.whaleEventListener();
     }

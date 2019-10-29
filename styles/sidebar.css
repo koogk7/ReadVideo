@@ -1,14 +1,27 @@
 
-@font-face{
-    font-family: NanumSquareWeb;
-    src: url(NanumSquareR.woff2) format('woff2'),
-        url(NanumSquareR.woff) format('woff'),
-        url(NanumSquareR.ttf) format('truetype'),
-}
+
+/* @font-face{
+    font-family: 'Noto Sans KR';
+    font-style: normal; 
+    font-weight: 400;
+    src: url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean');
+} */
+/* 
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: local('Noto Sans KR Thin'), local('NotoSansKR-Thin'), url(https://fonts.gstatic.com/s/notosanskr/v12/Pby6FmXiEBPT4ITbgNA5CgmOsn7twpAcuSUhxCwaN8allRh_AYWeASEkw16X.0.woff2) format('woff2');
+    unicode-range: U+f9ca-fa0b, U+ff03-ff05, U+ff07, U+ff0a-ff0b, U+ff0d-ff19, U+ff1b, U+ff1d, U+ff20-ff5b, U+ff5d, U+ffe0-ffe3, U+ffe5-ffe6;
+  } */
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean');
 
 
 body{
-    font-family: 나눔스퀘어, NanumSquare, NanumSquareWeb;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-stretch: wider;
     height: 90%;
 }
 
@@ -63,12 +76,12 @@ header .top_bar{
 
 .highlighting{
 
-    border: 2px;
+    border: 0.5px;
     border-style: solid; 
-    border-radius: 30px;
+    border-radius: 10px;
     border-image-slice: 1;
-    border-color: #599499;
-    background: linear-gradient(to bottom, #599499, #5D919E);
+    border-color: #ffa300;
+    background-color: #ffa300;
     box-shadow: 2px 2px 2px 2px gray;
 
     margin: 1px 2px 1px 2px;
@@ -76,7 +89,7 @@ header .top_bar{
     font-size: 16px;
 
     color: white;
-    padding-top: 3px;
+    
 }
 
 .hideSubtitle{
@@ -104,7 +117,7 @@ header .top_bar{
 .subtitle_wrap .repeatSelect {
     /* background-color: #5D919E !important; */
     /* background-color:  */
-    background: linear-gradient( to bottom, #599499, #5D919E) !important;
+    background: linear-gradient( to right, #5197a6, #698abe) !important;
     color: white;
 }
 
@@ -122,8 +135,7 @@ header .top_bar{
     /* display: flex; */
 
     border-left: 6px;
-    border-image: linear-gradient( to bottom, #599499, #5D919E);
-    border-image-slice: 1;
+    border-color: #5197a6;
     border-style: none none none solid;
 
     background-color: white;
@@ -133,7 +145,8 @@ header .top_bar{
     
     width: 90%;
     height: auto;
-    padding-left: 10px;
+    padding: 5px 5px 5px 6px;
+
     margin-bottom: 20px;
 
 }

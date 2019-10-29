@@ -114,13 +114,10 @@ class ReadVideo {
         let subtitleWrapNode = document.querySelector('.subtitle_wrap[data-idx="'+ subtitleId + '"]');
         let subtitleContentNode = subtitleWrapNode.querySelector('.subtitle_content');
 
-        ReadVideo.changeBarColor(subtitleContentNode, CONSTANT.PLAYING_BAR_COLOR, CONSTANT.PLAYING_BAR_COLOR);
-        
-        // console.log("sync");
-        // currentSubtitle.scrollIntoView(true);
+        ReadVideo.changeBarColor(subtitleContentNode, CONSTANT.PLAYING_BAR_COLOR);
 
         if(this.preSubtitle != null && subtitleContentNode !== this.preSubtitle){
-            ReadVideo.changeBarColor(this.preSubtitle, CONSTANT.DEFAULT_BAR_TOP_COLOR, CONSTANT.DEFAULT_BAR_BOTTOM_COLOR);
+            ReadVideo.changeBarColor(this.preSubtitle, CONSTANT.DEFAULT_BAR_TOP_COLOR);
         }
 
         this.preSubtitle = subtitleContentNode;
@@ -266,9 +263,9 @@ class ReadVideo {
 
     }
 
-    static changeBarColor(node, top, bottom){
-        node.style.borderImage = 'linear-gradient( to bottom,'  + top + ', ' + bottom + ')';
-        node.style.borderImageSlice = '1';
+    static changeBarColor(node, color){
+        node.style.borderColor = color;
+        // node.style.borderImageSlice = '1';
     }
 
     static toggleRepeatIcon(isOn){

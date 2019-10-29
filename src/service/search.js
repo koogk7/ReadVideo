@@ -8,7 +8,8 @@ export default class SearchAdmin{
 
         document.getElementById("search_img").setAttribute("src", "./image/search_on.png");
 
-        let value = document.getElementById("searchText").value.toUpperCase();
+        let value = document.getElementById("searchText").value;
+        let pattern = new RegExp(value, 'i');
         let list = document.getElementsByClassName("subtitle_content");
 
         this.highlightNodeList.map(node => {
@@ -17,7 +18,7 @@ export default class SearchAdmin{
         this.highlightNodeList = [];
 
         for(let i = 0; i < list.length; i++){
-            if( value !== '' && list[i].innerHTML.toUpperCase().indexOf(value) > -1){
+            if( value !== '' && list[i].innerHTML.search(pattern) > -1){
                 SearchAdmin.highlightWord(list[i], value);
                 this.highlightNodeList.push(list[i]);
                 list[i].classList.remove('hideSubtitle');
@@ -42,10 +43,16 @@ export default class SearchAdmin{
     };
 
     static highlightWord = (subtitleNode, keyword) => {
-        let highlightNode = '<span class="highlighting">' + keyword + '</span>';
         let pattern = new RegExp(keyword, 'gi');
+        let originKeyword = subtitleNode.textContent.match(pattern);
+        let highlightNode = originKeyword.map(keyword => {
+            return '<span class="highlighting">' + keyword + '</span>';
+        });
 
-        subtitleNode.innerHTML = subtitleNode.textContent.replace(pattern, highlightNode);
+        highlightNode.map( (node, idx) => {
+            subtitleNode.innerHTML = subtitleNode.textContent.replace(originKeyword[idx], highlightNode);
+        })
+
     };
 
     static removeHighlight = (subtitleNode) => {

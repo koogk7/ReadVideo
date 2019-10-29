@@ -7,43 +7,45 @@
 }
 
 
-body{font-family: 나눔스퀘어, NanumSquare, NanumSquareWeb}
+body{
+    font-family: 나눔스퀘어, NanumSquare, NanumSquareWeb;
+    height: 90%;
+}
 
 
 header{
-    margin-top: 15px;
-    margin-left: 10px;
+    margin: 15px 0px 0px 10px;
     position: fixed;
+    top: -100px;
+
     background-color: white;
-    top:0px;
-    height: 110px;
+
+    height: 200px;
     width: 100%;
+    
     z-index: 1;
 }
-.top_bar{
-    margin-left: 10px;
-    position: fixed;
-    top: 70px;   
-    left: 10px;
-}
-section{
-    position: absolute;
-}
-.subtitle_list{
-    position: relative;
-    top: 140px;
-    overflow: hidden;
-}
 
-#logo_img{
+header #logo_img{
+    position: absolute;
+    top: 100px;
+    
     width: 161.33px;
     height: 40px;
 }
-#searchText{
-    background-image: url(../image/search_on.png);
+header .top_bar{
+    position: absolute;
+    
+    bottom: 10px;  
 }
-.btn{
-    width: 30px;
+#searchText{
+    background: url(../image/search_bar.png) no-repeat;
+    background-position: top right;
+    background-size: 270px 40px;
+    border: 0px;
+    outline: none;
+
+    width: 135px;
     height: 30px;
 }
 
@@ -52,8 +54,10 @@ section{
 }
 
 .icon_img{
-    width: 30px;
-    height: 30px;
+    position: relative;
+    top: 15px;
+    width: 43px;
+    height: 40px;
 }
 
 
@@ -104,41 +108,36 @@ section{
 }
 
 .subtitle_wrap .repeatSelect {
-    background-color: #5D919E !important;
+    /* background-color: #5D919E !important; */
+    /* background-color:  */
+    background: linear-gradient( to bottom, #599499, #5D919E) !important;
     color: white;
 }
 
-.top_bar{
-    margin-bottom: 30px;
-}
-
-.subtitle_wrap{
+#sub_section{
     width: 100%;
-    height: auto;
-    /* background-color: #298b63; */
+    height: 1000px;
+    overflow: auto;
+    margin-left: 10px;
 
+    margin-top: 110px;
 }
 
-.subtitle_content{
+#sub_section .subtitle_content{
 
-    float: left;
+    display: flex;
+
     border-left: 6px;
-    border-left-style: solid;
     border-image: linear-gradient( to bottom, #599499, #5D919E);
-    border-top-style: none;
-    border-bottom-style: none;
-    border-right-style: none; 
     border-image-slice: 1;
+    border-style: none none none solid;
 
     background-color: white;
-    /* background: linear-gradient( to bottom,green, blue); */
     
     font-size: 18px;
     font-weight: 600;
     width: 90%;
     height: auto;
     padding-left: 10px;
-    margin-left: 5px;
-    margin-right: 10px;
     margin-bottom: 20px;
 }

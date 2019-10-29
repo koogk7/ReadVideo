@@ -12,6 +12,9 @@ export default class SearchAdmin{
         let pattern = new RegExp(value, 'i');
         let list = document.getElementsByClassName("subtitle_content");
 
+        if(!SearchAdmin.isSupport(value))
+            return;
+
         this.highlightNodeList.map(node => {
             SearchAdmin.removeHighlight(node);
         });
@@ -41,6 +44,15 @@ export default class SearchAdmin{
             this.searchString();
         }
     };
+
+    static isSupport(keyword){
+        let noSupport = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi;
+        if(noSupport.test(keyword)){
+            alert('특수문자 검색은 지원하지 않습니다.');
+            return false;
+        }
+        return true;
+    }
 
     static highlightWord = (subtitleNode, keyword) => {
         let pattern = new RegExp(keyword, 'gi');

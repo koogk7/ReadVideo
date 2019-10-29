@@ -53,7 +53,7 @@
           <entry key="css" value="263" />
           <entry key="dummy" value="3" />
           <entry key="html" value="283" />
-          <entry key="js" value="12154" />
+          <entry key="js" value="12193" />
           <entry key="json" value="81" />
         </counts>
       </usages-collector>
@@ -62,7 +62,7 @@
           <entry key="CSS" value="263" />
           <entry key="HTML" value="283" />
           <entry key="JSON" value="81" />
-          <entry key="JavaScript" value="12154" />
+          <entry key="JavaScript" value="12193" />
           <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
@@ -109,7 +109,7 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/service/search.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="345">
+                <state relative-caret-position="386">
                   <caret line="55" column="11" lean-forward="true" selection-start-line="55" selection-start-column="11" selection-end-line="55" selection-end-column="11" />
                 </state>
               </provider>
@@ -136,8 +136,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/styles/sidebar.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="246">
-                  <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
+                <state relative-caret-position="131">
+                  <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
                 </state>
               </provider>
             </entry>
@@ -308,7 +308,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63621000" />
+    <option name="totallyTimeSpent" value="63949000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -446,14 +446,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/styles/sidebar.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
+        <state relative-caret-position="131">
+          <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/service/search.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
+        <state relative-caret-position="386">
           <caret line="55" column="11" lean-forward="true" selection-start-line="55" selection-start-column="11" selection-end-line="55" selection-end-column="11" />
         </state>
       </provider>

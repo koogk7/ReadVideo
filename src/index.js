@@ -63,7 +63,7 @@ class ReadVideo {
       `
         }, (result) => { //  실행된 코드 마지막 결과를 받아온다.
             console.log(result);
-            if(result == null || result[0] == null){
+            if(result == null || result[0] == []){
                 console.log("자막을 가져오는데 오류가 발생했습니다.");
                 this.renderNoSupport();
             }
@@ -80,6 +80,7 @@ class ReadVideo {
                 });
 
                 this.renderSubtitle(this.currentSubtitles);
+                console.log(this.currentSubtitles);
             }
         });
     }
@@ -209,6 +210,7 @@ class ReadVideo {
 
         if(this.repeatStartId == null || this.repeatStartId > subtitleId){
             this.repeatStartId = subtitleId;
+            this.repeatEndId = Math.min(this.repeatEndId, subtitleId)
         }
 
         if(isOneRepeat || isInitEndId || isUpdateEndId){
@@ -216,6 +218,9 @@ class ReadVideo {
         }
 
         if(this.repeatStartId != null && this.repeatEndId != null){
+            let temp = this.repeatStartId;
+            this.repeatStartId = Math.min(this.repeatStartId, this.repeatEndId);
+            this.repeatEndId = Math.max(temp, this.repeatEndId);
             this.completeToSelectRepeat();
         }
 
@@ -223,7 +228,7 @@ class ReadVideo {
     }
 
     repeatPlayTime(startTime, endTime){
-
+        console.log("repeatPlayTime " + startTime + ", " + endTime);
         whale.tabs.executeScript({
             code: `
                 window.showSubtitle.repeatMode = ${this.repeatMode};
@@ -242,6 +247,8 @@ class ReadVideo {
     completeToSelectRepeat(){
         let starTime = this.currentSubtitles[this.repeatStartId].startTime;
         let endTime = this.currentSubtitles[this.repeatEndId].endTime;
+        console.log("completeToSelectRepeat");
+        console.log(this.repeatStartId + ',' + this.repeatEndId);
         this.repeatPlayTime(starTime, endTime);
     }
 

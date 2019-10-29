@@ -50,7 +50,7 @@ export default class SearchAdmin{
         });
 
         highlightNode.map( (node, idx) => {
-            subtitleNode.innerHTML = subtitleNode.textContent.replace(originKeyword[idx], highlightNode);
+            subtitleNode.innerHTML = subtitleNode.textContent.replace(originKeyword[idx], highlightNode[idx]);
         })
 
     };

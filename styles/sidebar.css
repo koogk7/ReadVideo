@@ -63,36 +63,25 @@ header .top_bar{
 
 .highlighting{
 
-    /*
-    주의점
-    1. 줄간격 : 하이라이팅 된 부분 공간이 넓어지면서 다른 글자를 가림
-    2. 테두리가 매끄럽지 못함
-    3. 색깔 수정: 반복재생이랑 겹치면 티가 안남
-    */
-
-    border: 5px;
+    border: 2px;
     border-style: solid; 
     border-radius: 30px;
     border-image-slice: 1;
-    /* border-image:linear-gradient(to bottom,  #599499, #5D919E); */
     border-color: #599499;
     background: linear-gradient(to bottom, #599499, #5D919E);
     box-shadow: 2px 2px 2px 2px gray;
 
-    margin: 0 10px 0 10px;
+    margin: 1px 2px 1px 2px;
 
-    font-size: 14px;
+    font-size: 16px;
 
     color: white;
     padding-top: 3px;
-    /* vertical-align: center; */
 }
 
 .hideSubtitle{
     display: none;
 }
-
-
 
 .repeatBox input[type="checkbox"]{
     display: none;
@@ -124,13 +113,13 @@ header .top_bar{
     height: 1000px;
     overflow: auto;
     margin-left: 10px;
-
-    margin-top: 125px;
+    margin-top: 120px;
+    padding-top:20px;
 }
 
 #sub_section .subtitle_content{
 
-    display: flex;
+    /* display: flex; */
 
     border-left: 6px;
     border-image: linear-gradient( to bottom, #599499, #5D919E);

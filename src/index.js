@@ -114,6 +114,9 @@ class ReadVideo {
         let subtitleContentNode = subtitleWrapNode.querySelector('.subtitle_content');
 
         ReadVideo.changeBarColor(subtitleContentNode, CONSTANT.PLAYING_BAR_COLOR, CONSTANT.PLAYING_BAR_COLOR);
+        
+        // console.log("sync");
+        // currentSubtitle.scrollIntoView(true);
 
         if(this.preSubtitle != null && subtitleContentNode !== this.preSubtitle){
             ReadVideo.changeBarColor(this.preSubtitle, CONSTANT.DEFAULT_BAR_TOP_COLOR, CONSTANT.DEFAULT_BAR_BOTTOM_COLOR);

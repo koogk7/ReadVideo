@@ -12,6 +12,9 @@ export default class SearchAdmin{
         let pattern = new RegExp(value, 'i');
         let list = document.getElementsByClassName("subtitle_content");
 
+        if(!SearchAdmin.isSupport(value))
+            return;
+
         this.highlightNodeList.map(node => {
             SearchAdmin.removeHighlight(node);
         });
@@ -42,21 +45,30 @@ export default class SearchAdmin{
         }
     };
 
+    static isSupport(keyword){
+        let noSupport = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi;
+        if(noSupport.test(keyword)){
+            alert('특수문자 검색은 지원하지 않습니다.');
+            return false;
+        }
+        return true;
+    }
+
     static highlightWord = (subtitleNode, keyword) => {
         let pattern = new RegExp(keyword, 'gi');
         let originKeyword = subtitleNode.textContent.match(pattern);
-        let matchChecker = 'ewdwq^&1sd';
+        let matchChecker = '쀆^';
         let highlightNode = originKeyword.map(keyword => {
-            return '<span class="highlighting">' + matchChecker + '</span>';
+            return '<span class="highlighting">' + keyword + '</span>';
         });
 
-        highlightNode.map( (node, idx) => {
-            let p = new RegExp(originKeyword[idx], 'i');
-            subtitleNode.textContent = subtitleNode.textContent.replace(p, node);
+        originKeyword.map( (keyword) => {
+            let p = new RegExp(keyword, 'i');
+            subtitleNode.textContent = subtitleNode.textContent.replace(p, matchChecker);
         });
 
-        originKeyword.map(keyword => {
-            subtitleNode.textContent = subtitleNode.textContent.replace(matchChecker, keyword);
+        highlightNode.map(node => {
+            subtitleNode.textContent = subtitleNode.textContent.replace(matchChecker, node);
         });
 
         subtitleNode.innerHTML = subtitleNode.textContent;

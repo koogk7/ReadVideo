@@ -83,6 +83,10 @@ header .top_bar{
     /* vertical-align: center; */
 }
 
+.hideSubtitle{
+    display: none;
+}
+
 
 
 .repeatBox input[type="checkbox"]{

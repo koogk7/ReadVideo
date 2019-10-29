@@ -1,7 +1,7 @@
 {
   // 필수
   "manifest_version": 2,// 고정
-  "name": "안봐도 비디오 - 영상을 읽",
+  "name": "안봐도 비디오 - 영상을 읽다",
   "version": "1.0.0",
   "content_scripts": [{
     "matches": ["<all_urls>"],

@@ -7,14 +7,18 @@
 </head>
 <body>
     <link rel="stylesheet" type="text/css" href="styles/sidebar.css">
+    <div id="head_back"></div>
     <header>
         <div id ="top_bar1">
             <a class="btn" id="downloadBtn" href="" download="sub.txt">
                 <img id = "download_img" src="./image/download_off.png" class="icon_img"/>
             </a>
-            <button id="reloadBtn">
-                자막 새로고침
-            </button>
+            <input type="button" id="reloadBtn" class="btn">
+                <label for="reloadBtn">
+                        <img id="reload_img" src="./image/reload_off.png" class="icon_img"/>
+                </label>
+                
+            
         </div>
 
         <div id="logo">
@@ -40,7 +44,9 @@
             
             <select id="selectLangBtn">
             </select>
-            <label for="selectLangBtn"></label>
+            <label for="selectLangBtn">
+                <img src="./image/language_on.png" class="icon_img" id="language_img"/>
+            </label>
         </div>
     </header>
 

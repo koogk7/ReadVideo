@@ -42,6 +42,7 @@ class ReadVideo {
         });
 
         this.loadingWrapperNode = document.querySelector('.loading_wrapper');
+        this.noSupportWrapperNode = document.querySelector('.no_support_wrapper');
 
         this.whaleEventListener();
     }
@@ -101,10 +102,12 @@ class ReadVideo {
                     this.allSubtitles[subtitleItem[langIdx]] = this.transSubtitles(subtitleItem[contentIdx]);
                 });
 
+                this.noSupportWrapperNode.classList.add('hideSubtitle');
                 this.renderSubtitle(this.currentSubtitles);
                 this.selectLangService.loadSelectOption(this.allSubtitles);
-                this.loadingWrapperNode.classList.add('hideSubtitle');
             }
+            
+            this.loadingWrapperNode.classList.add('hideSubtitle');
         });
     }
 
@@ -183,9 +186,7 @@ class ReadVideo {
 
     renderNoSupport(){
         //Todo 구체화 필요
-        let temp = document.createElement('div');
-        temp.textContent = '지원하지 않는 페이지입니다';
-        this.subtitleListNode.appendChild(temp);
+        this.noSupportWrapperNode.classList.remove('hideSubtitle');
     }
 
     movePlayTime(event){
@@ -295,7 +296,6 @@ class ReadVideo {
 
         iconNode.setAttribute('src', CONSTANT.BASE_IMG_URL + iconUrl);
     }
-
 
     whaleEventListener(){
 

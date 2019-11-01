@@ -186,7 +186,13 @@ class ReadVideo {
         let paragraphSplit = subtitlesText.split('\n\n');
         let rst  = [];
 
-        paragraphSplit.map(item => {
+        paragraphSplit.map( (item, idx) => {
+            // 왓챠
+            if(item.split('\n')[0].indexOf('-->') !== -1)
+                item = idx + '\n' + item;
+
+            console.log(item);
+
             let subtitle = new Subtitle();
 
             if(subtitle.adapter(item))

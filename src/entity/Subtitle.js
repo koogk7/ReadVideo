@@ -27,7 +27,15 @@ export default class Subtitle {
     }
 
     strToSec(strTime){ // 00:00:00.00 형식
-        let colonSplit = strTime.split(/:/);
+        let colonSplit = strTime.replace(/(\s*)/g, "").split(/:/);
+        let str = strTime;
+
+        while(colonSplit.length < 3){
+            str = '00:' + strTime;
+            colonSplit = str.replace(/(\s*)/g, "").split(/:/);
+        }
+
+
         return colonSplit[0]*60*60 + colonSplit[1]*60 + colonSplit[2]*1;
     }
 

@@ -31,7 +31,7 @@
           <entry key="gif" value="1" />
           <entry key="gitignore" value="1" />
           <entry key="html" value="8" />
-          <entry key="js" value="32" />
+          <entry key="js" value="34" />
           <entry key="json" value="2" />
           <entry key="png" value="8" />
           <entry key="rnc" value="1" />
@@ -44,7 +44,7 @@
           <entry key="HTML" value="8" />
           <entry key="Image" value="9" />
           <entry key="JSON" value="2" />
-          <entry key="JavaScript" value="32" />
+          <entry key="JavaScript" value="34" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="RNG Compact" value="1" />
           <entry key="TypeScript" value="2" />
@@ -55,7 +55,7 @@
           <entry key="css" value="449" />
           <entry key="dummy" value="3" />
           <entry key="html" value="625" />
-          <entry key="js" value="14202" />
+          <entry key="js" value="14270" />
           <entry key="json" value="81" />
         </counts>
       </usages-collector>
@@ -64,36 +64,32 @@
           <entry key="CSS" value="449" />
           <entry key="HTML" value="625" />
           <entry key="JSON" value="81" />
-          <entry key="JavaScript" value="14202" />
+          <entry key="JavaScript" value="14270" />
           <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.64892775">
+    <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="586">
-                  <caret line="155" column="6" selection-start-line="155" selection-start-column="6" selection-end-line="155" selection-end-column="6" />
+                <state relative-caret-position="195">
+                  <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
                   <folding>
                     <element signature="e#0#53#0" expanded="true" />
-                    <element signature="n#!!block;n#initExecuteCode#0;n#ReadVideo#0" />
                     <element signature="n#!!block;n#syncVideo#0;n#ReadVideo#0" />
                     <element signature="n#!!block;n#transSubtitles#0;n#ReadVideo#0" />
                     <element signature="n#!!block;n#renderSubtitle#0;n#ReadVideo#0" />
                     <element signature="n#!!block;n#movePlayTime#0;n#ReadVideo#0" />
-                    <element signature="n#!!block;n#repeatBtnClickHandler#0;n#ReadVideo#0" />
                     <element signature="n#!!block;n#repeatModeClickHandler#0;n#ReadVideo#0" />
-                    <element signature="n#!!block;n#repeatPlayTime#0;n#ReadVideo#0" />
                     <element signature="n#!!block;n#completeToSelectRepeat#0;n#ReadVideo#0" />
                     <element signature="n#!!block;n#setRepeatNodeStyle#0;n#ReadVideo#0" />
                     <element signature="n#!!block;n#changeBarColor#0;n#ReadVideo#0" />
                     <element signature="n#!!block;n#toggleRepeatIcon#0;n#ReadVideo#0" />
-                    <element signature="n#!!block;n#whaleEventListener#0;n#ReadVideo#0" />
                   </folding>
                 </state>
               </provider>
@@ -111,8 +107,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/service/SelectLangService.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="437">
-                  <caret line="19" column="47" lean-forward="true" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
+                <state relative-caret-position="394">
+                  <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
                 </state>
               </provider>
             </entry>
@@ -131,10 +127,10 @@
       <split-second>
         <leaf>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/styles/sidebar.css">
+            <entry file="file://$PROJECT_DIR$/src/service/search.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3510">
-                  <caret line="155" lean-forward="true" selection-start-line="155" selection-end-line="155" />
+                <state relative-caret-position="-28">
+                  <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
                 </state>
               </provider>
             </entry>
@@ -245,7 +241,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="css&#9;FILE&#9;file:///Applications/Project/ReadVideo/styles/sidebar.css&#10;inde&#9;FILE&#9;file:///Applications/Project/ReadVideo/src/index.js&#10;con&#9;FILE&#9;file:///Applications/Project/ReadVideo/src/common/constant.js&#10;sid&#9;FILE&#9;file:///Applications/Project/ReadVideo/styles/sidebar.css&#10;sty&#9;FILE&#9;file:///Applications/Project/ReadVideo/styles&#10;show&#9;FILE&#9;file:///Applications/Project/ReadVideo/src/service/showSubtitle.js&#10;s&#9;FILE&#9;file:///Applications/Project/ReadVideo/styles/sidebar.css&#10;sho&#9;FILE&#9;file:///Applications/Project/ReadVideo/src/service/showSubtitle.js&#10;sub&#9;FILE&#9;file:///Applications/Project/ReadVideo/src/entity/Subtitle.js&#10;sh&#9;FILE&#9;file:///Applications/Project/ReadVideo/src/service/showSubtitle.js&#10;Sub&#9;FILE&#9;file:///Applications/Project/ReadVideo/src/entity/Subtitle.js" />
+    <property name="SearchEverywhereHistoryKey" value="se&#9;FILE&#9;file:///Applications/Project/ReadVideo/src/service/search.js&#10;css&#9;FILE&#9;file:///Applications/Project/ReadVideo/styles/sidebar.css&#10;inde&#9;FILE&#9;file:///Applications/Project/ReadVideo/src/index.js&#10;con&#9;FILE&#9;file:///Applications/Project/ReadVideo/src/common/constant.js&#10;sid&#9;FILE&#9;file:///Applications/Project/ReadVideo/styles/sidebar.css&#10;sty&#9;FILE&#9;file:///Applications/Project/ReadVideo/styles&#10;show&#9;FILE&#9;file:///Applications/Project/ReadVideo/src/service/showSubtitle.js&#10;s&#9;FILE&#9;file:///Applications/Project/ReadVideo/styles/sidebar.css&#10;sho&#9;FILE&#9;file:///Applications/Project/ReadVideo/src/service/showSubtitle.js&#10;sub&#9;FILE&#9;file:///Applications/Project/ReadVideo/src/entity/Subtitle.js&#10;sh&#9;FILE&#9;file:///Applications/Project/ReadVideo/src/service/showSubtitle.js&#10;Sub&#9;FILE&#9;file:///Applications/Project/ReadVideo/src/entity/Subtitle.js" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -295,7 +291,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77599000" />
+    <option name="totallyTimeSpent" value="78533000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -407,13 +403,6 @@
     <entry file="file://$PROJECT_DIR$/image/top_logo.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/styles/sidebar.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3510">
-          <caret line="155" lean-forward="true" selection-start-line="155" selection-end-line="155" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/image/language_on.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -422,13 +411,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/image/language_off.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/search.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="68" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="68" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/image/auto_scroll_off.png">
       <provider selected="true" editor-type-id="images" />
@@ -442,8 +424,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/service/SelectLangService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="19" column="47" lean-forward="true" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
+        <state relative-caret-position="394">
+          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -454,25 +436,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/styles/sidebar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/search.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-28">
+          <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="155" column="6" selection-start-line="155" selection-start-column="6" selection-end-line="155" selection-end-column="6" />
+        <state relative-caret-position="195">
+          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
           <folding>
             <element signature="e#0#53#0" expanded="true" />
-            <element signature="n#!!block;n#initExecuteCode#0;n#ReadVideo#0" />
             <element signature="n#!!block;n#syncVideo#0;n#ReadVideo#0" />
             <element signature="n#!!block;n#transSubtitles#0;n#ReadVideo#0" />
             <element signature="n#!!block;n#renderSubtitle#0;n#ReadVideo#0" />
             <element signature="n#!!block;n#movePlayTime#0;n#ReadVideo#0" />
-            <element signature="n#!!block;n#repeatBtnClickHandler#0;n#ReadVideo#0" />
             <element signature="n#!!block;n#repeatModeClickHandler#0;n#ReadVideo#0" />
-            <element signature="n#!!block;n#repeatPlayTime#0;n#ReadVideo#0" />
             <element signature="n#!!block;n#completeToSelectRepeat#0;n#ReadVideo#0" />
             <element signature="n#!!block;n#setRepeatNodeStyle#0;n#ReadVideo#0" />
             <element signature="n#!!block;n#changeBarColor#0;n#ReadVideo#0" />
             <element signature="n#!!block;n#toggleRepeatIcon#0;n#ReadVideo#0" />
-            <element signature="n#!!block;n#whaleEventListener#0;n#ReadVideo#0" />
           </folding>
         </state>
       </provider>

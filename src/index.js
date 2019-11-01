@@ -50,11 +50,17 @@ class ReadVideo {
         this.whaleEventListener();
     }
 
+    initField = () =>{
+        this.allSubtitles = [];
+        this.currentSubtitles = [];
+        this.repeatMode = false;
+        this.autoScrollMode = false;
+    };
+
     reloadSubtitle = () => {
         this.initExecuteCode();
         this.removeSubtitleList();
-        this.allSubtitles = [];
-        this.currentSubtitles = [];
+        this.initField();
         this.selectLangService.removeSelectOptionNode();
         this.loadSubtitles();
         this.connectWebVideo();
@@ -68,7 +74,6 @@ class ReadVideo {
       `
         });
 
-        let searchBtn = document.querySelector('#searchBtn');
         let repeatImg = document.querySelector('#repeatBtn img');
 
         repeatImg.setAttribute('src', CONSTANT.BASE_IMG_URL + CONSTANT.REPEAT_OFF_IMG);

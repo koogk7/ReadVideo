@@ -1,7 +1,7 @@
 import ShowSubtitle from './service/showSubtitle.js';
 import Subtitle from './entity/Subtitle.js';
 import {CONSTANT} from './common/constant.js';
-
+import SelectLangService from './service/SelectLangService.js';
 import DownloadAdmin from './service/download.js';
 import SearchAdmin from './service/search.js';
 
@@ -31,9 +31,23 @@ class ReadVideo {
         this.searchBtn.addEventListener('click', this.searchAdmin.searchString);
         this.searchText.addEventListener('keydown', this.searchAdmin.enterSearchHandler);
 
+        this.reloadBtn = document.querySelector('#reloadBtn');
+        this.reloadBtn.addEventListener('click', this.reloadSubtitle);
+
+        this.selectLangService = new SelectLangService();
 
         this.whaleEventListener();
     }
+
+    reloadSubtitle = () => {
+        this.initExecuteCode();
+        this.removeSubtitleList();
+        this.allSubtitles = [];
+        this.currentSubtitles = [];
+        this.selectLangService.removeSelectOptionNode();
+        this.loadSubtitles();
+        this.connectWebVideo();
+    };
 
     initExecuteCode() {
         // 탭 페이지에 ShowSubtitle 클래스 초기화 및 자막 찾기
@@ -81,6 +95,7 @@ class ReadVideo {
 
                 this.renderSubtitle(this.currentSubtitles);
                 console.log(this.currentSubtitles);
+                this.selectLangService.loadSelectOption(this.allSubtitles);
             }
         });
     }
@@ -244,7 +259,6 @@ class ReadVideo {
     completeToSelectRepeat(){
         let starTime = this.currentSubtitles[this.repeatStartId].startTime;
         let endTime = this.currentSubtitles[this.repeatEndId].endTime;
-        console.log("completeToSelectRepeat");
         console.log(this.repeatStartId + ',' + this.repeatEndId);
         this.repeatPlayTime(starTime, endTime);
     }
@@ -265,7 +279,6 @@ class ReadVideo {
 
     static changeBarColor(node, color){
         node.style.borderColor = color;
-        // node.style.borderImageSlice = '1';
     }
 
     static toggleRepeatIcon(isOn){
@@ -281,24 +294,19 @@ class ReadVideo {
         // 탭이 업데이트 되었을때
         whale.tabs.onUpdated.addListener((id, changeInfo) => {
             if(changeInfo.status === 'complete') {
-                this.initExecuteCode();
-                this.removeSubtitleList();
-                this.loadSubtitles();
+               this.reloadSubtitle();
             }
         });
 
         // 다른 탭이 활성화 되었을때
         whale.tabs.onActivated.addListener(() => {
-            this.initExecuteCode();
-            this.removeSubtitleList();
-            this.loadSubtitles();
-            this.connectWebVideo();
+            this.reloadSubtitle();
         });
 
         // 탭이 종료되었을때
-        whale.tabs.onRemoved.addListener((id) => {
-
-        });
+        // whale.tabs.onRemoved.addListener((id) => {
+        //
+        // });
 
         // 사이드바가 활성화 되었을때
         // document.addEventListener('visibilitychange', ()=>{

@@ -137,3 +137,19 @@ header .top_bar{
     margin-bottom: 20px;
 
 }
+
+.loading_wrapper{
+    text-align: center;
+    font-weight: bold;
+}
+
+.no_support_wrapper{
+    text-align: center;
+    width: 60%;
+    margin: auto;
+}
+
+.no_support_wrapper img{
+    width: 100%;
+}
+

@@ -150,3 +150,8 @@ header .top_bar{
     margin-bottom: 20px;
 
 }
+
+.loading_wrapper{
+    text-align: center;
+    font-weight: bold;
+}

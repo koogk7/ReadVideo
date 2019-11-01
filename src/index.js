@@ -41,6 +41,8 @@ class ReadVideo {
             this.renderSubtitle(this.currentSubtitles);
         });
 
+        this.loadingWrapperNode = document.querySelector('.loading_wrapper');
+
         this.whaleEventListener();
     }
 
@@ -75,6 +77,8 @@ class ReadVideo {
     }
 
     loadSubtitles(){
+        this.loadingWrapperNode.classList.remove('hideSubtitle');
+
         whale.tabs.executeScript({
             code: `
         if(window.showSubtitle.hasVideo())
@@ -98,8 +102,8 @@ class ReadVideo {
                 });
 
                 this.renderSubtitle(this.currentSubtitles);
-                console.log(this.currentSubtitles);
                 this.selectLangService.loadSelectOption(this.allSubtitles);
+                this.loadingWrapperNode.classList.add('hideSubtitle');
             }
         });
     }

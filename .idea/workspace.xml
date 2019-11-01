@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="826cd98c-0f46-4cb1-9bf2-53e2afedac0a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/image/auto_scroll_off.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/auto_scroll_on.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/language_off.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/language_on.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/sidebar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/SelectLangService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/SelectLangService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/sidebar.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/sidebar.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -63,7 +55,7 @@
           <entry key="css" value="449" />
           <entry key="dummy" value="3" />
           <entry key="html" value="625" />
-          <entry key="js" value="13884" />
+          <entry key="js" value="14202" />
           <entry key="json" value="81" />
         </counts>
       </usages-collector>
@@ -72,7 +64,7 @@
           <entry key="CSS" value="449" />
           <entry key="HTML" value="625" />
           <entry key="JSON" value="81" />
-          <entry key="JavaScript" value="13884" />
+          <entry key="JavaScript" value="14202" />
           <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
@@ -82,17 +74,17 @@
     <splitter split-orientation="horizontal" split-proportion="0.64892775">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-755">
-                  <caret line="84" column="19" lean-forward="true" selection-start-line="84" selection-start-column="19" selection-end-line="84" selection-end-column="19" />
+                <state relative-caret-position="586">
+                  <caret line="155" column="6" selection-start-line="155" selection-start-column="6" selection-end-line="155" selection-end-column="6" />
                   <folding>
                     <element signature="e#0#53#0" expanded="true" />
                     <element signature="n#!!block;n#initExecuteCode#0;n#ReadVideo#0" />
-                    <element signature="n#!!block;n#connectWebVideo#0;n#ReadVideo#0" />
                     <element signature="n#!!block;n#syncVideo#0;n#ReadVideo#0" />
                     <element signature="n#!!block;n#transSubtitles#0;n#ReadVideo#0" />
+                    <element signature="n#!!block;n#renderSubtitle#0;n#ReadVideo#0" />
                     <element signature="n#!!block;n#movePlayTime#0;n#ReadVideo#0" />
                     <element signature="n#!!block;n#repeatBtnClickHandler#0;n#ReadVideo#0" />
                     <element signature="n#!!block;n#repeatModeClickHandler#0;n#ReadVideo#0" />
@@ -119,17 +111,17 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/service/SelectLangService.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="223">
-                  <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+                <state relative-caret-position="437">
+                  <caret line="19" column="47" lean-forward="true" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/sidebar.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="450">
-                  <caret line="42" column="22" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
+                <state relative-caret-position="255">
+                  <caret line="32" column="59" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="59" />
                 </state>
               </provider>
             </entry>
@@ -142,7 +134,7 @@
             <entry file="file://$PROJECT_DIR$/styles/sidebar.css">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="3510">
-                  <caret line="172" lean-forward="true" selection-start-line="172" selection-end-line="172" />
+                  <caret line="155" lean-forward="true" selection-start-line="155" selection-end-line="155" />
                 </state>
               </provider>
             </entry>
@@ -195,10 +187,10 @@
         <option value="$PROJECT_DIR$/src/service/showSubtitle.js" />
         <option value="$PROJECT_DIR$/src/service/selectLang.js" />
         <option value="$PROJECT_DIR$/src/service/SubtitleService.js" />
-        <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/styles/sidebar.css" />
         <option value="$PROJECT_DIR$/src/service/SelectLangService.js" />
         <option value="$PROJECT_DIR$/sidebar.html" />
+        <option value="$PROJECT_DIR$/src/index.js" />
       </list>
     </option>
   </component>
@@ -303,13 +295,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76693000" />
+    <option name="totallyTimeSpent" value="77599000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1858618" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.1858618" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -418,44 +410,11 @@
     <entry file="file://$PROJECT_DIR$/styles/sidebar.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3510">
-          <caret line="172" lean-forward="true" selection-start-line="172" selection-end-line="172" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-755">
-          <caret line="84" column="19" lean-forward="true" selection-start-line="84" selection-start-column="19" selection-end-line="84" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#53#0" expanded="true" />
-            <element signature="n#!!block;n#initExecuteCode#0;n#ReadVideo#0" />
-            <element signature="n#!!block;n#connectWebVideo#0;n#ReadVideo#0" />
-            <element signature="n#!!block;n#syncVideo#0;n#ReadVideo#0" />
-            <element signature="n#!!block;n#transSubtitles#0;n#ReadVideo#0" />
-            <element signature="n#!!block;n#movePlayTime#0;n#ReadVideo#0" />
-            <element signature="n#!!block;n#repeatBtnClickHandler#0;n#ReadVideo#0" />
-            <element signature="n#!!block;n#repeatModeClickHandler#0;n#ReadVideo#0" />
-            <element signature="n#!!block;n#repeatPlayTime#0;n#ReadVideo#0" />
-            <element signature="n#!!block;n#completeToSelectRepeat#0;n#ReadVideo#0" />
-            <element signature="n#!!block;n#setRepeatNodeStyle#0;n#ReadVideo#0" />
-            <element signature="n#!!block;n#changeBarColor#0;n#ReadVideo#0" />
-            <element signature="n#!!block;n#toggleRepeatIcon#0;n#ReadVideo#0" />
-            <element signature="n#!!block;n#whaleEventListener#0;n#ReadVideo#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/SubtitleService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <caret line="155" lean-forward="true" selection-start-line="155" selection-end-line="155" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/image/language_on.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/image/language_off.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/image/auto_scroll_on.png">
@@ -474,17 +433,47 @@
     <entry file="file://$PROJECT_DIR$/image/auto_scroll_off.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/SelectLangService.js">
+    <entry file="file://$PROJECT_DIR$/sidebar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        <state relative-caret-position="255">
+          <caret line="32" column="59" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="59" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sidebar.html">
+    <entry file="file://$PROJECT_DIR$/src/service/SelectLangService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="42" column="22" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
+        <state relative-caret-position="437">
+          <caret line="19" column="47" lean-forward="true" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/SubtitleService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="586">
+          <caret line="155" column="6" selection-start-line="155" selection-start-column="6" selection-end-line="155" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+            <element signature="n#!!block;n#initExecuteCode#0;n#ReadVideo#0" />
+            <element signature="n#!!block;n#syncVideo#0;n#ReadVideo#0" />
+            <element signature="n#!!block;n#transSubtitles#0;n#ReadVideo#0" />
+            <element signature="n#!!block;n#renderSubtitle#0;n#ReadVideo#0" />
+            <element signature="n#!!block;n#movePlayTime#0;n#ReadVideo#0" />
+            <element signature="n#!!block;n#repeatBtnClickHandler#0;n#ReadVideo#0" />
+            <element signature="n#!!block;n#repeatModeClickHandler#0;n#ReadVideo#0" />
+            <element signature="n#!!block;n#repeatPlayTime#0;n#ReadVideo#0" />
+            <element signature="n#!!block;n#completeToSelectRepeat#0;n#ReadVideo#0" />
+            <element signature="n#!!block;n#setRepeatNodeStyle#0;n#ReadVideo#0" />
+            <element signature="n#!!block;n#changeBarColor#0;n#ReadVideo#0" />
+            <element signature="n#!!block;n#toggleRepeatIcon#0;n#ReadVideo#0" />
+            <element signature="n#!!block;n#whaleEventListener#0;n#ReadVideo#0" />
+          </folding>
         </state>
       </provider>
     </entry>

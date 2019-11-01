@@ -41,6 +41,9 @@ class ReadVideo {
             this.renderSubtitle(this.currentSubtitles);
         });
 
+        this.autoScrollMode = false;
+        document.querySelector('#scrollBtn').addEventListener('click', this.scrollClickHandler);
+
         this.loadingWrapperNode = document.querySelector('.loading_wrapper');
         this.noSupportWrapperNode = document.querySelector('.no_support_wrapper');
 
@@ -88,7 +91,7 @@ class ReadVideo {
       `
         }, (result) => { //  실행된 코드 마지막 결과를 받아온다.
             console.log(result);
-            if(result == null || result[0] === []){
+            if(result == null || result[0].length === 0){
                 this.renderNoSupport();
             }
             else{
@@ -122,7 +125,8 @@ class ReadVideo {
             if (port.name === `readChannel`) {
                 port.onMessage.addListener(message => {
                     this.syncVideo(message);
-                    // this.scrollToTop(message);
+                    if(this.autoScrollMode)
+                        this.scrollToTop(message);
                 });
             }
         });
@@ -130,7 +134,7 @@ class ReadVideo {
     }
 
 
-    scrollToTop(currentTime){
+    scrollToTop = (currentTime) => {
         let currentSubtitle = this.currentSubtitles.filter(item => {
             return item.startTime <= currentTime && item.endTime >= currentTime;
         });
@@ -145,7 +149,11 @@ class ReadVideo {
         
         // if (getScrollTop() < getDocumentHeight() - window.innerHeight) return;
         subtitleContentNode.scrollIntoView({behavior: "auto", block: "center", inline: "nearest"}); // Bottom
-    }
+    };
+
+    scrollClickHandler = () => {
+        this.autoScrollMode = ! this.autoScrollMode;
+    };
 
 
     syncVideo(currentTime){

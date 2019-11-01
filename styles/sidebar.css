@@ -4,8 +4,9 @@
 
 body{
     font-family: 'Noto Sans KR', sans-serif;
-    font-stretch: wider;
-    height: 90%;
+
+    /* font-stretch: wider; */
+    /* height: 90%; */
     overflow: hidden;
 }
 
@@ -21,19 +22,22 @@ body{
 } */
 header{
     position: fixed;
-    top: 0px;
-    left:0px;
+    top: 0;
+    left:0;
     background-color: white;
 
-    height: 120px;
-    width: 100%;
+    /* height: 120px;
+    width: 100%; */
     
+    height: 17vh;
+    width: 100vw;
+
     z-index: 1;
 }
 header #top_bar1{
     position: absolute;
-    top: 0px;
-    right: 10px;
+    top: 0vh;
+    right: 3vw;
 }
 
 header #logo_img{
@@ -48,7 +52,7 @@ header .top_bar{
     position: absolute;
     
     right: 10px;
-    bottom: 10px;  
+    bottom: 5px;  
 }
 #searchText{
     background: url(../image/search_bar.png) no-repeat;
@@ -137,8 +141,10 @@ header .top_bar{
 }
 
 #sub_section{
-    width: 100%;
-    height: 360px;
+    /* width: 100%;
+    height: 360px; */
+    width: 100vw;
+    height: 70vh;
     overflow: auto;
 
     /* 여기다 여기 스크롤 */

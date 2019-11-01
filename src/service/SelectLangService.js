@@ -11,6 +11,10 @@ export default class SelectLangService{
         }
     };
 
+    getCurrentLang = () =>{
+        return this.selectNode.value;
+    };
+
     appendOptionNode = (lang) => {
         let optionNode = document.createElement('option');
         optionNode.setAttribute('value', lang);

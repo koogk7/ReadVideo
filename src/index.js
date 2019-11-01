@@ -11,7 +11,6 @@ class ReadVideo {
     constructor() {
         this.allSubtitles = {}; // 다국어 자막 전체 저장
         this.currentSubtitles = []; // 현재 선택 자막
-        this.currentLang = null; // 현재 선택 자막 언어
         this.subtitleListNode = document.querySelector('.subtitle_list');
         this.preSubtitle = null;
 
@@ -35,6 +34,12 @@ class ReadVideo {
         this.reloadBtn.addEventListener('click', this.reloadSubtitle);
 
         this.selectLangService = new SelectLangService();
+        this.selectLangService.selectNode.addEventListener('change', ()=>{
+            let selectedLang = this.selectLangService.getCurrentLang();
+            this.currentSubtitles = this.allSubtitles[selectedLang];
+            this.removeSubtitleList();
+            this.renderSubtitle(this.currentSubtitles);
+        });
 
         this.whaleEventListener();
     }
@@ -86,11 +91,10 @@ class ReadVideo {
                 let langIdx = 0;
                 let contentIdx = 1;
 
-                this.currentLang = response[0][langIdx];
                 this.currentSubtitles = this.transSubtitles(response[0][contentIdx]);
 
                 response.map(subtitleItem =>{
-                    this.allSubtitles[subtitleItem[langIdx]] = subtitleItem[contentIdx];
+                    this.allSubtitles[subtitleItem[langIdx]] = this.transSubtitles(subtitleItem[contentIdx]);
                 });
 
                 this.renderSubtitle(this.currentSubtitles);

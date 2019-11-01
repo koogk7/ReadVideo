@@ -13,11 +13,12 @@ header{
     margin: 15px 0px 0px 10px;
     position: fixed;
     top: -100px;
+    left:-30px;
 
     background-color: white;
 
     height: 200px;
-    width: 100%;
+    width: 120%;
     
     z-index: 1;
 }
@@ -25,13 +26,15 @@ header{
 header #logo_img{
     position: absolute;
     top: 100px;
-    
+    left: 30px;
+
     width: 161.33px;
     height: 40px;
 }
 header .top_bar{
     position: absolute;
     
+    left: 30px;
     bottom: 10px;  
 }
 #searchText{
@@ -145,7 +148,7 @@ header .top_bar{
 
 .no_support_wrapper{
     text-align: center;
-    width: 60%;
+    width: 300px;
     margin: auto;
 }
 

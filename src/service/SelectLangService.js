@@ -1,6 +1,6 @@
 export default class SelectLangService{
     constructor(){
-        this.selectNode = document.querySelector('#selectLanBtn');
+        this.selectNode = document.querySelector('#selectLangBtn');
         this.langList = [];
     }
 
@@ -26,5 +26,7 @@ export default class SelectLangService{
         while(this.selectNode.firstChild) {
             this.selectNode.removeChild(this.selectNode.firstChild);
         }
-    }
+    };
+
+
 }

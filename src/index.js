@@ -79,6 +79,7 @@ class ReadVideo {
 
     loadSubtitles(){
         this.loadingWrapperNode.classList.remove('hideSubtitle');
+        this.noSupportWrapperNode.classList.add('hideSubtitle');
 
         whale.tabs.executeScript({
             code: `
@@ -87,8 +88,7 @@ class ReadVideo {
       `
         }, (result) => { //  실행된 코드 마지막 결과를 받아온다.
             console.log(result);
-            if(result == null || result[0] == []){
-                console.log("자막을 가져오는데 오류가 발생했습니다.");
+            if(result == null || result[0] === []){
                 this.renderNoSupport();
             }
             else{
@@ -106,7 +106,7 @@ class ReadVideo {
                 this.renderSubtitle(this.currentSubtitles);
                 this.selectLangService.loadSelectOption(this.allSubtitles);
             }
-            
+
             this.loadingWrapperNode.classList.add('hideSubtitle');
         });
     }

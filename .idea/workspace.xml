@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="826cd98c-0f46-4cb1-9bf2-53e2afedac0a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/showSubtitle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/showSubtitle.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -53,7 +52,7 @@
           <entry key="css" value="263" />
           <entry key="dummy" value="3" />
           <entry key="html" value="283" />
-          <entry key="js" value="12487" />
+          <entry key="js" value="12519" />
           <entry key="json" value="81" />
         </counts>
       </usages-collector>
@@ -62,7 +61,7 @@
           <entry key="CSS" value="263" />
           <entry key="HTML" value="283" />
           <entry key="JSON" value="81" />
-          <entry key="JavaScript" value="12487" />
+          <entry key="JavaScript" value="12519" />
           <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
@@ -84,8 +83,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="444">
-                  <caret line="222" column="64" lean-forward="true" selection-start-line="222" selection-start-column="64" selection-end-line="222" selection-end-column="64" />
+                <state relative-caret-position="361">
+                  <caret line="214" column="8" selection-start-line="214" selection-start-column="8" selection-end-line="214" selection-end-column="8" />
                   <folding>
                     <element signature="e#0#53#0" expanded="true" />
                     <element signature="n#!!block;n#initExecuteCode#0;n#ReadVideo#0" />
@@ -304,7 +303,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67082000" />
+    <option name="totallyTimeSpent" value="67336000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -433,8 +432,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="222" column="64" lean-forward="true" selection-start-line="222" selection-start-column="64" selection-end-line="222" selection-end-column="64" />
+        <state relative-caret-position="361">
+          <caret line="214" column="8" selection-start-line="214" selection-start-column="8" selection-end-line="214" selection-end-column="8" />
           <folding>
             <element signature="e#0#53#0" expanded="true" />
             <element signature="n#!!block;n#initExecuteCode#0;n#ReadVideo#0" />

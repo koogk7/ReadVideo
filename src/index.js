@@ -227,7 +227,7 @@ class ReadVideo {
 
         if(this.repeatStartId == null || this.repeatStartId > subtitleId){
             this.repeatStartId = subtitleId;
-            this.repeatEndId = Math.min(this.repeatEndId, subtitleId)
+            this.repeatEndId = Math.max(this.repeatEndId, subtitleId)
         }
 
         if(isOneRepeat || isInitEndId || isUpdateEndId){

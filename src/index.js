@@ -96,11 +96,31 @@ class ReadVideo {
             if (port.name === `readChannel`) {
                 port.onMessage.addListener(message => {
                     this.syncVideo(message);
+                    // this.scrollToTop(message);
                 });
             }
         });
 
     }
+
+
+    scrollToTop(currentTime){
+        let currentSubtitle = this.currentSubtitles.filter(item => {
+            return item.startTime <= currentTime && item.endTime >= currentTime;
+        });
+
+        if(currentSubtitle.length < 1)
+            return;
+
+        let subtitleId = currentSubtitle[0].id;
+        let subtitleWrapNode = document.querySelector('.subtitle_wrap[data-idx="'+ subtitleId + '"]');
+        let subtitleContentNode = subtitleWrapNode.querySelector('.subtitle_content');
+        
+        
+        // if (getScrollTop() < getDocumentHeight() - window.innerHeight) return;
+        subtitleContentNode.scrollIntoView({behavior: "auto", block: "center", inline: "nearest"}); // Bottom
+    }
+
 
     syncVideo(currentTime){
         let currentSubtitle = this.currentSubtitles.filter(item => {
@@ -274,7 +294,6 @@ class ReadVideo {
 
         iconNode.setAttribute('src', CONSTANT.BASE_IMG_URL + iconUrl);
     }
-
 
     whaleEventListener(){
 

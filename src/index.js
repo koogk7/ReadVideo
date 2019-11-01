@@ -1,7 +1,7 @@
 import ShowSubtitle from './service/showSubtitle.js';
 import Subtitle from './entity/Subtitle.js';
 import {CONSTANT} from './common/constant.js';
-
+import SelectLangService from './service/SelectLangService.js';
 import DownloadAdmin from './service/download.js';
 import SearchAdmin from './service/search.js';
 
@@ -11,7 +11,6 @@ class ReadVideo {
     constructor() {
         this.allSubtitles = {}; // 다국어 자막 전체 저장
         this.currentSubtitles = []; // 현재 선택 자막
-        this.currentLang = null; // 현재 선택 자막 언어
         this.subtitleListNode = document.querySelector('.subtitle_list');
         this.preSubtitle = null;
 
@@ -31,9 +30,32 @@ class ReadVideo {
         this.searchBtn.addEventListener('click', this.searchAdmin.searchString);
         this.searchText.addEventListener('keydown', this.searchAdmin.enterSearchHandler);
 
+        this.reloadBtn = document.querySelector('#reloadBtn');
+        this.reloadBtn.addEventListener('click', this.reloadSubtitle);
+
+        this.selectLangService = new SelectLangService();
+        this.selectLangService.selectNode.addEventListener('change', ()=>{
+            let selectedLang = this.selectLangService.getCurrentLang();
+            this.currentSubtitles = this.allSubtitles[selectedLang];
+            this.removeSubtitleList();
+            this.renderSubtitle(this.currentSubtitles);
+        });
+
+        this.loadingWrapperNode = document.querySelector('.loading_wrapper');
+        this.noSupportWrapperNode = document.querySelector('.no_support_wrapper');
 
         this.whaleEventListener();
     }
+
+    reloadSubtitle = () => {
+        this.initExecuteCode();
+        this.removeSubtitleList();
+        this.allSubtitles = [];
+        this.currentSubtitles = [];
+        this.selectLangService.removeSelectOptionNode();
+        this.loadSubtitles();
+        this.connectWebVideo();
+    };
 
     initExecuteCode() {
         // 탭 페이지에 ShowSubtitle 클래스 초기화 및 자막 찾기
@@ -56,6 +78,8 @@ class ReadVideo {
     }
 
     loadSubtitles(){
+        this.loadingWrapperNode.classList.remove('hideSubtitle');
+
         whale.tabs.executeScript({
             code: `
         if(window.showSubtitle.hasVideo())
@@ -72,16 +96,18 @@ class ReadVideo {
                 let langIdx = 0;
                 let contentIdx = 1;
 
-                this.currentLang = response[0][langIdx];
                 this.currentSubtitles = this.transSubtitles(response[0][contentIdx]);
 
                 response.map(subtitleItem =>{
-                    this.allSubtitles[subtitleItem[langIdx]] = subtitleItem[contentIdx];
+                    this.allSubtitles[subtitleItem[langIdx]] = this.transSubtitles(subtitleItem[contentIdx]);
                 });
 
+                this.noSupportWrapperNode.classList.add('hideSubtitle');
                 this.renderSubtitle(this.currentSubtitles);
-                console.log(this.currentSubtitles);
+                this.selectLangService.loadSelectOption(this.allSubtitles);
             }
+            
+            this.loadingWrapperNode.classList.add('hideSubtitle');
         });
     }
 
@@ -180,9 +206,7 @@ class ReadVideo {
 
     renderNoSupport(){
         //Todo 구체화 필요
-        let temp = document.createElement('div');
-        temp.textContent = '지원하지 않는 페이지입니다';
-        this.subtitleListNode.appendChild(temp);
+        this.noSupportWrapperNode.classList.remove('hideSubtitle');
     }
 
     movePlayTime(event){
@@ -264,7 +288,6 @@ class ReadVideo {
     completeToSelectRepeat(){
         let starTime = this.currentSubtitles[this.repeatStartId].startTime;
         let endTime = this.currentSubtitles[this.repeatEndId].endTime;
-        console.log("completeToSelectRepeat");
         console.log(this.repeatStartId + ',' + this.repeatEndId);
         this.repeatPlayTime(starTime, endTime);
     }
@@ -285,7 +308,6 @@ class ReadVideo {
 
     static changeBarColor(node, color){
         node.style.borderColor = color;
-        // node.style.borderImageSlice = '1';
     }
 
     static toggleRepeatIcon(isOn){
@@ -300,24 +322,19 @@ class ReadVideo {
         // 탭이 업데이트 되었을때
         whale.tabs.onUpdated.addListener((id, changeInfo) => {
             if(changeInfo.status === 'complete') {
-                this.initExecuteCode();
-                this.removeSubtitleList();
-                this.loadSubtitles();
+               this.reloadSubtitle();
             }
         });
 
         // 다른 탭이 활성화 되었을때
         whale.tabs.onActivated.addListener(() => {
-            this.initExecuteCode();
-            this.removeSubtitleList();
-            this.loadSubtitles();
-            this.connectWebVideo();
+            this.reloadSubtitle();
         });
 
         // 탭이 종료되었을때
-        whale.tabs.onRemoved.addListener((id) => {
-
-        });
+        // whale.tabs.onRemoved.addListener((id) => {
+        //
+        // });
 
         // 사이드바가 활성화 되었을때
         // document.addEventListener('visibilitychange', ()=>{

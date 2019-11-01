@@ -29,7 +29,7 @@ header{
     /* height: 120px;
     width: 100%; */
     
-    height: 17vh;
+    height: 25vh;
     width: 100vw;
 
     z-index: 1;
@@ -37,42 +37,46 @@ header{
 header #top_bar1{
     position: absolute;
     top: 0vh;
-    right: 3vw;
+    right: 20px;
 }
 
 header #logo_img{
-    position: absolute;
+    /* position: absolute;
     top: 30px;
-    left: 30px;
+    left: 30px; */
+
+    margin-top: 5vh;
+    margin-left: 30px;
 
     width: 161.33px;
     height: 40px;
 }
 header .top_bar{
-    position: absolute;
-    
+    /* position: absolute;
     right: 10px;
-    bottom: 5px;  
+    bottom: 5px;   */
+
+    margin-left: 30px;
 }
 #searchText{
     background: url(../image/search_bar.png) no-repeat;
     background-position: top right;
-    background-size: 270px 40px;
+    background-size: 50vw 40px;
     border: 0px;
     outline: none;
 
-    width: 40%;
+    width: 40vw;
     height: 30px;
 }
-
+#downloadBtn{
+    color: white;
+}
 #searchBtn{
     display: none;
 }
-
 #selectLangBtn{
     display: none;
 }
-
 #reloadBtn{
     display: none;
 }
@@ -141,16 +145,14 @@ header .top_bar{
 }
 
 #sub_section{
-    /* width: 100%;
-    height: 360px; */
     width: 100vw;
-    height: 70vh;
+    height: 75vh;
     overflow: auto;
 
-    /* 여기다 여기 스크롤 */
+    margin-top: 25vh;
     margin-left: 10px;
-    margin-top: 120px;
-    padding-top:20px;
+    /* margin-top: 150px; */
+    /* padding-top:20px; */
     padding-bottom: 300px;
 }
 

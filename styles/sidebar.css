@@ -9,8 +9,7 @@ body{
     overflow: hidden;
 }
 
-#head_back{
-    margin: 15px 0px 0px 10px;
+/* #head_back{
     position: fixed;
     top: -100px;
     left:-30px;
@@ -19,30 +18,28 @@ body{
 
     height: 210px;
     width: 120%;
-}
+} */
 header{
-    margin: 15px 0px 0px 10px;
     position: fixed;
-    top: -100px;
-    left:-30px;
-
+    top: 0px;
+    left:0px;
     background-color: white;
 
-    height: 210px;
+    height: 120px;
     width: 100%;
     
     z-index: 1;
 }
 header #top_bar1{
     position: absolute;
-    top: 70px;
+    top: 0px;
     right: 10px;
 }
 
 header #logo_img{
     position: absolute;
-    top: 120px;
-    left: 50px;
+    top: 30px;
+    left: 30px;
 
     width: 161.33px;
     height: 40px;
@@ -76,9 +73,13 @@ header .top_bar{
     display: none;
 }
 
+.top_bar .icon_img{
+    position: relative;
+    top: 15px
+}
+
 .icon_img{
     position: relative;
-    top: 15px;
     width: 43px;
     height: 40px;
 }

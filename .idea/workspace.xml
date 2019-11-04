@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="826cd98c-0f46-4cb1-9bf2-53e2afedac0a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Subtitle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Subtitle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -55,7 +57,7 @@
           <entry key="css" value="449" />
           <entry key="dummy" value="3" />
           <entry key="html" value="625" />
-          <entry key="js" value="14270" />
+          <entry key="js" value="14401" />
           <entry key="json" value="81" />
         </counts>
       </usages-collector>
@@ -64,25 +66,23 @@
           <entry key="CSS" value="449" />
           <entry key="HTML" value="625" />
           <entry key="JSON" value="81" />
-          <entry key="JavaScript" value="14270" />
+          <entry key="JavaScript" value="14401" />
           <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.5615568">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="195">
-                  <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+                <state relative-caret-position="291">
+                  <caret line="191" column="24" selection-start-line="191" selection-start-column="24" selection-end-line="191" selection-end-column="24" />
                   <folding>
                     <element signature="e#0#53#0" expanded="true" />
-                    <element signature="n#!!block;n#syncVideo#0;n#ReadVideo#0" />
-                    <element signature="n#!!block;n#transSubtitles#0;n#ReadVideo#0" />
                     <element signature="n#!!block;n#renderSubtitle#0;n#ReadVideo#0" />
                     <element signature="n#!!block;n#movePlayTime#0;n#ReadVideo#0" />
                     <element signature="n#!!block;n#repeatModeClickHandler#0;n#ReadVideo#0" />
@@ -96,6 +96,15 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/styles/sidebar.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="367">
+                  <caret line="53" column="16" lean-forward="true" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/service/SubtitleService.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="46">
@@ -104,20 +113,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/service/SelectLangService.js">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/entity/Subtitle.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="394">
-                  <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/sidebar.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="32" column="59" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="59" />
+                <state relative-caret-position="471">
+                  <caret line="34" column="51" lean-forward="true" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
                 </state>
               </provider>
             </entry>
@@ -126,11 +126,20 @@
       </split-first>
       <split-second>
         <leaf>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/service/search.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="-28">
                   <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/sidebar.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="50">
+                  <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="6" selection-end-column="7" />
                 </state>
               </provider>
             </entry>
@@ -162,6 +171,7 @@
       <find>st.</find>
       <find>자막</find>
       <find>형식</find>
+      <find>replace</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -176,7 +186,6 @@
         <option value="$PROJECT_DIR$/src/service/whaleEventLisner.js" />
         <option value="$PROJECT_DIR$/src/service/whaleEventListener.js" />
         <option value="$PROJECT_DIR$/background.js" />
-        <option value="$PROJECT_DIR$/src/entity/Subtitle.js" />
         <option value="$PROJECT_DIR$/manifest.json" />
         <option value="$PROJECT_DIR$/src/common/constant.js" />
         <option value="$PROJECT_DIR$/src/service/search.js" />
@@ -187,6 +196,7 @@
         <option value="$PROJECT_DIR$/src/service/SelectLangService.js" />
         <option value="$PROJECT_DIR$/sidebar.html" />
         <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/entity/Subtitle.js" />
       </list>
     </option>
   </component>
@@ -291,7 +301,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78533000" />
+    <option name="totallyTimeSpent" value="79482000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -309,7 +319,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.035014007" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -358,13 +368,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/image/repeat_on.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/entity/Subtitle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/image/repeat_off.png">
       <provider selected="true" editor-type-id="images" />
@@ -417,8 +420,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sidebar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="32" column="59" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="59" />
+        <state relative-caret-position="50">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="6" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -438,8 +441,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/styles/sidebar.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+        <state relative-caret-position="367">
+          <caret line="53" column="16" lean-forward="true" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -452,12 +455,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+        <state relative-caret-position="291">
+          <caret line="191" column="24" selection-start-line="191" selection-start-column="24" selection-end-line="191" selection-end-column="24" />
           <folding>
             <element signature="e#0#53#0" expanded="true" />
-            <element signature="n#!!block;n#syncVideo#0;n#ReadVideo#0" />
-            <element signature="n#!!block;n#transSubtitles#0;n#ReadVideo#0" />
             <element signature="n#!!block;n#renderSubtitle#0;n#ReadVideo#0" />
             <element signature="n#!!block;n#movePlayTime#0;n#ReadVideo#0" />
             <element signature="n#!!block;n#repeatModeClickHandler#0;n#ReadVideo#0" />
@@ -466,6 +467,13 @@
             <element signature="n#!!block;n#changeBarColor#0;n#ReadVideo#0" />
             <element signature="n#!!block;n#toggleRepeatIcon#0;n#ReadVideo#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entity/Subtitle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="34" column="51" lean-forward="true" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
         </state>
       </provider>
     </entry>

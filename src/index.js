@@ -157,7 +157,14 @@ class ReadVideo {
     };
 
     scrollClickHandler = () => {
+        let  autoScrollBtnImg = document.querySelector('#scrollBtn img');
         this.autoScrollMode = ! this.autoScrollMode;
+
+        if(this.autoScrollMode){
+            autoScrollBtnImg.setAttribute('src', CONSTANT.BASE_IMG_URL + CONSTANT.SCROLL_ON_IMG);
+        } else {
+            autoScrollBtnImg.setAttribute('src', CONSTANT.BASE_IMG_URL + CONSTANT.SCROLL_OFF_IMG);
+        }
     };
 
 

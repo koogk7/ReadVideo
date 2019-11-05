@@ -55,6 +55,12 @@ class ReadVideo {
         this.currentSubtitles = [];
         this.repeatMode = false;
         this.autoScrollMode = false;
+
+        let repeatImg = document.querySelector('#repeatBtn img');
+        let autoScrollBtnImg = document.querySelector('#scrollBtn img');
+
+        repeatImg.setAttribute('src', CONSTANT.BASE_IMG_URL + CONSTANT.REPEAT_OFF_IMG);
+        autoScrollBtnImg.setAttribute('src', CONSTANT.BASE_IMG_URL + CONSTANT.SCROLL_OFF_IMG)
     };
 
     reloadSubtitle = () => {
@@ -73,10 +79,6 @@ class ReadVideo {
         window.showSubtitle = new ${ShowSubtitle}();
       `
         });
-
-        let repeatImg = document.querySelector('#repeatBtn img');
-
-        repeatImg.setAttribute('src', CONSTANT.BASE_IMG_URL + CONSTANT.REPEAT_OFF_IMG);
     }
 
     removeSubtitleList(){

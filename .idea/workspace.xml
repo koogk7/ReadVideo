@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="826cd98c-0f46-4cb1-9bf2-53e2afedac0a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/common/constant.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/constant.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/search.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -56,7 +57,7 @@
           <entry key="css" value="466" />
           <entry key="dummy" value="3" />
           <entry key="html" value="716" />
-          <entry key="js" value="14521" />
+          <entry key="js" value="14578" />
           <entry key="json" value="90" />
         </counts>
       </usages-collector>
@@ -65,14 +66,14 @@
           <entry key="CSS" value="466" />
           <entry key="HTML" value="716" />
           <entry key="JSON" value="90" />
-          <entry key="JavaScript" value="14521" />
+          <entry key="JavaScript" value="14578" />
           <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5154885">
+    <splitter split-orientation="horizontal" split-proportion="0.40428913">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -87,8 +88,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="409">
-                  <caret line="166" column="9" selection-start-line="166" selection-start-column="9" selection-end-line="166" selection-end-column="9" />
+                <state relative-caret-position="682">
+                  <caret line="63" column="6" lean-forward="true" selection-start-line="63" selection-start-column="6" selection-end-line="63" selection-end-column="6" />
                   <folding>
                     <element signature="e#0#53#0" expanded="true" />
                     <element signature="n#!!block;n#renderSubtitle#0;n#ReadVideo#0" />
@@ -134,19 +135,19 @@
       </split-first>
       <split-second>
         <leaf>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/service/search.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-28">
-                  <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+                <state relative-caret-position="281">
+                  <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/sidebar.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="263">
+                <state relative-caret-position="44">
                   <caret line="38" column="53" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="53" />
                 </state>
               </provider>
@@ -195,7 +196,6 @@
         <option value="$PROJECT_DIR$/src/service/whaleEventLisner.js" />
         <option value="$PROJECT_DIR$/src/service/whaleEventListener.js" />
         <option value="$PROJECT_DIR$/background.js" />
-        <option value="$PROJECT_DIR$/src/service/search.js" />
         <option value="$PROJECT_DIR$/src/service/showSubtitle.js" />
         <option value="$PROJECT_DIR$/src/service/selectLang.js" />
         <option value="$PROJECT_DIR$/src/service/SubtitleService.js" />
@@ -206,6 +206,7 @@
         <option value="$PROJECT_DIR$/sidebar.html" />
         <option value="$PROJECT_DIR$/src/common/constant.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/service/search.js" />
       </list>
     </option>
   </component>
@@ -230,11 +231,6 @@
             <path>
               <item name="ReadVideo" type="b2602c69:ProjectViewProjectNode" />
               <item name="ReadVideo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ReadVideo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ReadVideo" type="462c0819:PsiDirectoryNode" />
-              <item name="image" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ReadVideo" type="b2602c69:ProjectViewProjectNode" />
@@ -310,13 +306,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81617000" />
+    <option name="totallyTimeSpent" value="82516000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1858618" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.1858618" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -420,13 +416,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/search.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-28">
-          <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/entity/Subtitle.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
@@ -457,7 +446,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sidebar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
+        <state relative-caret-position="44">
           <caret line="38" column="53" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="53" />
         </state>
       </provider>
@@ -471,8 +460,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="166" column="9" selection-start-line="166" selection-start-column="9" selection-end-line="166" selection-end-column="9" />
+        <state relative-caret-position="682">
+          <caret line="63" column="6" lean-forward="true" selection-start-line="63" selection-start-column="6" selection-end-line="63" selection-end-column="6" />
           <folding>
             <element signature="e#0#53#0" expanded="true" />
             <element signature="n#!!block;n#renderSubtitle#0;n#ReadVideo#0" />
@@ -483,6 +472,13 @@
             <element signature="n#!!block;n#changeBarColor#0;n#ReadVideo#0" />
             <element signature="n#!!block;n#toggleRepeatIcon#0;n#ReadVideo#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/search.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
         </state>
       </provider>
     </entry>

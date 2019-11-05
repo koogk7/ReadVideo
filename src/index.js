@@ -199,13 +199,8 @@ class ReadVideo {
 
         let rst  = [];
 
-        console.log("====Trans=====");
-        console.log(subtitlesText.split('\n'));
-        console.log(JSON.stringify(paragraphSplit));
-
         paragraphSplit.map( (item, idx) => {
             // 왓챠
-            console.log(item);
             if(item.split('\n')[0].indexOf('-->') !== -1)
                 item = idx + '\n' + item;
 
@@ -214,7 +209,6 @@ class ReadVideo {
             if(subtitle.adapter(item))
                 rst.push(subtitle);
 
-            console.log(idx);
         });
 
         return rst;

@@ -32,11 +32,10 @@ export default class ShowSubtitle { // Todo 이름 마음에 안듬
         this.video.ontimeupdate = () => {
             this.syncPort.postMessage(this.video.currentTime);
             if(this.repeatMode && this.repeatEndTime <= this.video.currentTime){
-                console.log(this.repeatEndTime + " , " + this.video.currentTime);
+                // console.log(this.repeatEndTime + " , " + this.video.currentTime);
                 this.video.currentTime = this.repeatStartTime;
             }
         };
-        console.log(this.video.currentTime);
         return this.video.currentTime;
     }
 

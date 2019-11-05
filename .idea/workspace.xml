@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="826cd98c-0f46-4cb1-9bf2-53e2afedac0a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/showSubtitle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/showSubtitle.js" afterDir="false" />
     </list>
@@ -57,7 +56,7 @@
           <entry key="css" value="466" />
           <entry key="dummy" value="3" />
           <entry key="html" value="716" />
-          <entry key="js" value="14956" />
+          <entry key="js" value="14959" />
           <entry key="json" value="90" />
         </counts>
       </usages-collector>
@@ -66,14 +65,14 @@
           <entry key="CSS" value="466" />
           <entry key="HTML" value="716" />
           <entry key="JSON" value="90" />
-          <entry key="JavaScript" value="14956" />
+          <entry key="JavaScript" value="14959" />
           <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.796664">
+    <splitter split-orientation="horizontal" split-proportion="0.33439237">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -88,8 +87,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="260">
-                  <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
+                <state relative-caret-position="196">
+                  <caret line="202" column="17" lean-forward="true" selection-start-line="202" selection-start-column="17" selection-end-line="202" selection-end-column="17" />
                   <folding>
                     <element signature="e#0#53#0" expanded="true" />
                     <element signature="n#!!block;n#repeatModeClickHandler#0;n#ReadVideo#0" />
@@ -145,8 +144,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/service/showSubtitle.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="410">
-                  <caret line="38" column="44" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
+                <state relative-caret-position="146">
+                  <caret line="38" column="38" lean-forward="true" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
                 </state>
               </provider>
             </entry>
@@ -180,8 +179,8 @@
       <find>형식</find>
       <find>supo</find>
       <find>replace</find>
-      <find>scrollTo</find>
       <find>executeScript</find>
+      <find>scrollTo</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -205,8 +204,8 @@
         <option value="$PROJECT_DIR$/sidebar.html" />
         <option value="$PROJECT_DIR$/src/common/constant.js" />
         <option value="$PROJECT_DIR$/src/service/search.js" />
-        <option value="$PROJECT_DIR$/src/service/showSubtitle.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/service/showSubtitle.js" />
       </list>
     </option>
   </component>
@@ -306,7 +305,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87010000" />
+    <option name="totallyTimeSpent" value="87317000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -458,17 +457,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/showSubtitle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="38" column="44" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
+        <state relative-caret-position="196">
+          <caret line="202" column="17" lean-forward="true" selection-start-line="202" selection-start-column="17" selection-end-line="202" selection-end-column="17" />
           <folding>
             <element signature="e#0#53#0" expanded="true" />
             <element signature="n#!!block;n#repeatModeClickHandler#0;n#ReadVideo#0" />
@@ -477,6 +469,13 @@
             <element signature="n#!!block;n#changeBarColor#0;n#ReadVideo#0" />
             <element signature="n#!!block;n#toggleRepeatIcon#0;n#ReadVideo#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/showSubtitle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="38" column="38" lean-forward="true" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
         </state>
       </provider>
     </entry>

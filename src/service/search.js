@@ -12,7 +12,7 @@ export default class SearchAdmin{
 
         if(!SearchAdmin.isSupport(value))
             return;
-        
+
         let pattern = new RegExp(value, 'i');
         let list = document.getElementsByClassName("subtitle_content");
 

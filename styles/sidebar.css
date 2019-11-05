@@ -5,29 +5,14 @@
 body{
     font-family: 'Noto Sans KR', sans-serif;
 
-    /* font-stretch: wider; */
-    /* height: 90%; */
     overflow: hidden;
 }
 
-/* #head_back{
-    position: fixed;
-    top: -100px;
-    left:-30px;
-
-    background-color: white;
-
-    height: 210px;
-    width: 120%;
-} */
 header{
     position: fixed;
     top: 0;
     left:0;
     background-color: white;
-
-    /* height: 120px;
-    width: 100%; */
     
     height: 22vh;
     width: 100vw;
@@ -41,10 +26,6 @@ header #top_bar1{
 }
 
 header #logo_img{
-    /* position: absolute;
-    top: 30px;
-    left: 30px; */
-
     margin-top: 5vh;
     margin-left: 5vw;
 
@@ -52,10 +33,6 @@ header #logo_img{
     height: 40px;
 }
 header .top_bar{
-    /* position: absolute;
-    right: 10px;
-    bottom: 5px;   */
-
     margin-left: 5vw;
 }
 #searchText{
@@ -78,13 +55,9 @@ header .top_bar{
 select {
     width: 14vw;
     height: 20px;
-    /* border: 1px; */
 
     outline: none;
-    /* -webkit-appearance: none;   */
-    /* -moz-appearance: none; */
     appearance: none;
-    /* background: url(../image/language_off.png) no-repeat 43px 40px;   */
 }
 
 #reloadBtn{
@@ -148,8 +121,6 @@ select {
 }
 
 .subtitle_wrap .repeatSelect {
-    /* background-color: #5D919E !important; */
-    /* background-color:  */
     background: linear-gradient( to right, #5197a6, #698abe) !important;
     color: white;
 }
@@ -159,16 +130,13 @@ select {
     height: 75vh;
     overflow: auto;
 
+    /* margin-top: 300px; */
     margin-top: 23vh;
     margin-left: 10px;
-    /* margin-top: 150px; */
-    /* padding-top:20px; */
     padding-bottom: 300px;
 }
 
 #sub_section .subtitle_content{
-
-    /* display: flex; */
 
     border-left: 6px;
     border-color: #5197a6;
@@ -180,27 +148,29 @@ select {
     font-weight: 600;
     
     width: 90vw;
-    /* height: 75vh; */
     height: auto;
     padding: 5px 5px 5px 6px;
 
     margin-bottom: 20px;
+    z-index: 3;
 
 }
 
 .loading_wrapper{
     text-align: center;
     font-weight: bold;
+    z-index: 1;
 }
 
 .no_support_wrapper{
     text-align: center;
-    width: 90vw;
-    margin: 20vh auto;
-
+    width: 85vw;
+    margin: 10vh auto;
+    padding-right: 20px;
 }
 
 .no_support_wrapper img{
     width: 100%;
+    z-index: 1;
 }
 

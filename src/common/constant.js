@@ -1,5 +1,5 @@
 export const CONSTANT = {
-        PLAYING_BAR_COLOR : '#ffa300',
+        PLAYING_BAR_COLOR : '#7f3dc4',
         DEFAULT_BAR_TOP_COLOR : '#5197a6',
         DEFAULT_BAR_BOTTOM_COLOR : '#5197a6',
         REPEAT_ON_IMG : 'repeat_on.png',

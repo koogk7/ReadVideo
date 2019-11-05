@@ -75,8 +75,10 @@ class ReadVideo {
         });
 
         let repeatImg = document.querySelector('#repeatBtn img');
-
         repeatImg.setAttribute('src', CONSTANT.BASE_IMG_URL + CONSTANT.REPEAT_OFF_IMG);
+        let scrollImg = document.querySelector('#scrollBtn img');
+        scrollImg.setAttribute('src', CONSTANT.BASE_IMG_URL + CONSTANT.SCROLL_OFF_IMG);
+
     }
 
     removeSubtitleList(){

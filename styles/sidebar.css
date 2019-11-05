@@ -125,15 +125,17 @@ select {
     color: white;
 }
 
-#sub_section{
+#sub_section {
+    position: fixed;
+    top: 23vh;
     width: 100vw;
-    height: 75vh;
+    height: 30vh;
     overflow: auto;
-
     /* margin-top: 300px; */
-    margin-top: 23vh;
+    /* margin-top: 25vh; */
     margin-left: 10px;
     padding-bottom: 300px;
+    /* background-color: aqua; */
 }
 
 #sub_section .subtitle_content{

@@ -14,10 +14,10 @@ header{
     left:0;
     background-color: white;
     
-    height: 22vh;
+    height: 23vh;
     width: 100vw;
 
-    z-index: 1;
+    z-index: 99;
 }
 header #top_bar1{
     position: absolute;

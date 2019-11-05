@@ -184,8 +184,9 @@ header .top_bar{
 
 .no_support_wrapper{
     text-align: center;
-    width: 300px;
-    margin: auto;
+    width: 90vw;
+    margin: 20vh auto;
+
 }
 
 .no_support_wrapper img{

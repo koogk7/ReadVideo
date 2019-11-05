@@ -16,11 +16,10 @@
     "default_title": "사이드바앱",      // 선택
     "use_navigation_bar": true       // 선택
   },
-//  "background": {
-//    "scripts": ["./background.js"],
-//    "persistent": false
-//  },
-
+  "icons": {
+    "32": "./image/logo_main.png",
+    "128": "./image/logo_main.png"
+  },
   "permissions": [
     "<all_urls>",
     "activeTab"

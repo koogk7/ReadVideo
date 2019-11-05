@@ -129,12 +129,12 @@ select {
     position: fixed;
     top: 23vh;
     width: 100vw;
-    height: 30vh;
+    height: 70vh;
     overflow: auto;
     /* margin-top: 300px; */
     /* margin-top: 25vh; */
     margin-left: 10px;
-    padding-bottom: 300px;
+    padding-bottom: 100px;
     /* background-color: aqua; */
 }
 

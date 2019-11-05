@@ -89,7 +89,6 @@ select {
     /* blur-radius : */
      /* 흐림도(번짐), 번짐 효과 크기 blurriness (선택) */
 
-
     margin: 0px 2px 1px 2px;
     padding: 0px 3px 0px 3px;
 
@@ -131,11 +130,8 @@ select {
     width: 100vw;
     height: 70vh;
     overflow: auto;
-    /* margin-top: 300px; */
-    /* margin-top: 25vh; */
     margin-left: 10px;
     padding-bottom: 100px;
-    /* background-color: aqua; */
 }
 
 #sub_section .subtitle_content{
@@ -161,12 +157,18 @@ select {
 .loading_wrapper{
     text-align: center;
     font-weight: bold;
+    width: 300px;
+    margin: 10vh auto;
+    padding-right: 25px;
+}
+.loading_wrapper img{
+    width: 100%;
     z-index: 1;
 }
 
 .no_support_wrapper{
     text-align: center;
-    width: 85vw;
+    width: 300px;
     margin: 10vh auto;
     padding-right: 20px;
 }

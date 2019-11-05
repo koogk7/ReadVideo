@@ -55,6 +55,12 @@ class ReadVideo {
         this.currentSubtitles = [];
         this.repeatMode = false;
         this.autoScrollMode = false;
+
+        let repeatImg = document.querySelector('#repeatBtn img');
+        let autoScrollBtnImg = document.querySelector('#scrollBtn img');
+
+        repeatImg.setAttribute('src', CONSTANT.BASE_IMG_URL + CONSTANT.REPEAT_OFF_IMG);
+        autoScrollBtnImg.setAttribute('src', CONSTANT.BASE_IMG_URL + CONSTANT.SCROLL_OFF_IMG)
     };
 
     reloadSubtitle = () => {
@@ -73,12 +79,6 @@ class ReadVideo {
         window.showSubtitle = new ${ShowSubtitle}();
       `
         });
-
-        let repeatImg = document.querySelector('#repeatBtn img');
-        repeatImg.setAttribute('src', CONSTANT.BASE_IMG_URL + CONSTANT.REPEAT_OFF_IMG);
-        let scrollImg = document.querySelector('#scrollBtn img');
-        scrollImg.setAttribute('src', CONSTANT.BASE_IMG_URL + CONSTANT.SCROLL_OFF_IMG);
-
     }
 
     removeSubtitleList(){
@@ -97,7 +97,7 @@ class ReadVideo {
             window.showSubtitle.getSubtitles();    
       `
         }, (result) => { //  실행된 코드 마지막 결과를 받아온다.
-            console.log(result);
+            // console.log(result);
             if(result == null || result[0].length === 0){
                 this.renderNoSupport();
             }
@@ -105,13 +105,15 @@ class ReadVideo {
                 let response = result[0];
                 let langIdx = 0;
                 let contentIdx = 1;
-
+                console.log("====response=====");
+                console.log(response);
                 this.currentSubtitles = this.transSubtitles(response[0][contentIdx]);
-
+                console.log("====AllSubtitle=====");
+                console.log(this.allSubtitles);
                 response.map(subtitleItem =>{
                     this.allSubtitles[subtitleItem[langIdx]] = this.transSubtitles(subtitleItem[contentIdx]);
                 });
-
+                console.log(this.allSubtitles);
                 this.noSupportWrapperNode.classList.add('hideSubtitle');
                 this.renderSubtitle(this.currentSubtitles);
                 this.selectLangService.loadSelectOption(this.allSubtitles);
@@ -192,27 +194,32 @@ class ReadVideo {
     }
 
     transSubtitles(subtitlesText) {
-        let paragraphSplit = subtitlesText.split('\n\n');
+        let paragraphSplit = subtitlesText.replace(/(\r)/g, "").split('\n\n');
+
         let rst  = [];
+
+        console.log("====Trans=====");
+        console.log(subtitlesText.split('\n'));
+        console.log(JSON.stringify(paragraphSplit));
 
         paragraphSplit.map( (item, idx) => {
             // 왓챠
+            console.log(item);
             if(item.split('\n')[0].indexOf('-->') !== -1)
                 item = idx + '\n' + item;
-
-            console.log(item);
 
             let subtitle = new Subtitle();
 
             if(subtitle.adapter(item))
                 rst.push(subtitle);
+
+            console.log(idx);
         });
 
         return rst;
     }
 
     renderSubtitle(subtitles){
-
         subtitles.map((item, index) => {
             let subtitleWrapNode = document.createElement('div');
             let subtitleContentNode = document.createElement('div');
@@ -228,8 +235,8 @@ class ReadVideo {
 
             subtitleWrapNode.appendChild(subtitleContentNode);
             this.subtitleListNode.appendChild(subtitleWrapNode);
-        })
-
+        });
+        console.log(this.subtitleListNode);
     }
 
     renderNoSupport(){

@@ -9,11 +9,13 @@ export default class SearchAdmin{
         document.getElementById("search_img").setAttribute("src", "./image/search_on.png");
 
         let value = document.getElementById("searchText").value;
-        let pattern = new RegExp(value, 'i');
-        let list = document.getElementsByClassName("subtitle_content");
 
         if(!SearchAdmin.isSupport(value))
             return;
+
+        let pattern = new RegExp(value, 'i');
+        let list = document.getElementsByClassName("subtitle_content");
+
 
         this.highlightNodeList.map(node => {
             SearchAdmin.removeHighlight(node);
@@ -47,6 +49,9 @@ export default class SearchAdmin{
 
     static isSupport(keyword){
         let noSupport = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi;
+
+        console.log(keyword);
+
         if(noSupport.test(keyword)){
             alert('특수문자 검색은 지원하지 않습니다.');
             return false;

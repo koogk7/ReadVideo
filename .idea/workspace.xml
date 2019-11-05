@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="826cd98c-0f46-4cb1-9bf2-53e2afedac0a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/showSubtitle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/showSubtitle.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,24 +32,24 @@
           <entry key="css" value="7" />
           <entry key="gif" value="1" />
           <entry key="gitignore" value="1" />
-          <entry key="html" value="8" />
-          <entry key="js" value="35" />
+          <entry key="html" value="9" />
+          <entry key="js" value="37" />
           <entry key="json" value="3" />
           <entry key="png" value="8" />
           <entry key="rnc" value="1" />
-          <entry key="ts" value="2" />
+          <entry key="ts" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="7" />
-          <entry key="HTML" value="8" />
+          <entry key="HTML" value="9" />
           <entry key="Image" value="9" />
           <entry key="JSON" value="3" />
-          <entry key="JavaScript" value="35" />
+          <entry key="JavaScript" value="37" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="RNG Compact" value="1" />
-          <entry key="TypeScript" value="2" />
+          <entry key="TypeScript" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -56,7 +57,7 @@
           <entry key="css" value="466" />
           <entry key="dummy" value="3" />
           <entry key="html" value="716" />
-          <entry key="js" value="14721" />
+          <entry key="js" value="14956" />
           <entry key="json" value="90" />
         </counts>
       </usages-collector>
@@ -65,69 +66,94 @@
           <entry key="CSS" value="466" />
           <entry key="HTML" value="716" />
           <entry key="JSON" value="90" />
-          <entry key="JavaScript" value="14721" />
+          <entry key="JavaScript" value="14956" />
           <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manifest.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="12" column="42" lean-forward="true" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="199" column="8" selection-start-line="199" selection-start-column="8" selection-end-line="199" selection-end-column="8" />
-              <folding>
-                <element signature="e#0#53#0" expanded="true" />
-                <element signature="n#!!block;n#movePlayTime#0;n#ReadVideo#0" />
-                <element signature="n#!!block;n#repeatModeClickHandler#0;n#ReadVideo#0" />
-                <element signature="n#!!block;n#completeToSelectRepeat#0;n#ReadVideo#0" />
-                <element signature="n#!!block;n#setRepeatNodeStyle#0;n#ReadVideo#0" />
-                <element signature="n#!!block;n#changeBarColor#0;n#ReadVideo#0" />
-                <element signature="n#!!block;n#toggleRepeatIcon#0;n#ReadVideo#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/service/SubtitleService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/common/constant.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/entity/Subtitle.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.796664">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/manifest.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="273">
+                  <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/index.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="260">
+                  <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
+                  <folding>
+                    <element signature="e#0#53#0" expanded="true" />
+                    <element signature="n#!!block;n#repeatModeClickHandler#0;n#ReadVideo#0" />
+                    <element signature="n#!!block;n#completeToSelectRepeat#0;n#ReadVideo#0" />
+                    <element signature="n#!!block;n#setRepeatNodeStyle#0;n#ReadVideo#0" />
+                    <element signature="n#!!block;n#changeBarColor#0;n#ReadVideo#0" />
+                    <element signature="n#!!block;n#toggleRepeatIcon#0;n#ReadVideo#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/service/SubtitleService.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="92">
+                  <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/common/constant.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="207">
+                  <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/entity/Subtitle.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="217">
+                  <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/sidebar.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="339">
+                  <caret line="19" column="14" lean-forward="true" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/service/showSubtitle.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="410">
+                  <caret line="38" column="44" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -154,6 +180,8 @@
       <find>형식</find>
       <find>supo</find>
       <find>replace</find>
+      <find>scrollTo</find>
+      <find>executeScript</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -168,7 +196,6 @@
         <option value="$PROJECT_DIR$/src/service/whaleEventLisner.js" />
         <option value="$PROJECT_DIR$/src/service/whaleEventListener.js" />
         <option value="$PROJECT_DIR$/background.js" />
-        <option value="$PROJECT_DIR$/src/service/showSubtitle.js" />
         <option value="$PROJECT_DIR$/src/service/selectLang.js" />
         <option value="$PROJECT_DIR$/src/service/SubtitleService.js" />
         <option value="$PROJECT_DIR$/src/service/SelectLangService.js" />
@@ -178,6 +205,7 @@
         <option value="$PROJECT_DIR$/sidebar.html" />
         <option value="$PROJECT_DIR$/src/common/constant.js" />
         <option value="$PROJECT_DIR$/src/service/search.js" />
+        <option value="$PROJECT_DIR$/src/service/showSubtitle.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
       </list>
     </option>
@@ -228,7 +256,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="cons&#9;FILE&#9;file:///Applications/Project/ReadVideo/src/common/constant.js&#10;ma&#9;FILE&#9;file:///Applications/Project/ReadVideo/manifest.json&#10;se&#9;FILE&#9;file:///Applications/Project/ReadVideo/src/service/search.js&#10;css&#9;FILE&#9;file:///Applications/Project/ReadVideo/styles/sidebar.css&#10;inde&#9;FILE&#9;file:///Applications/Project/ReadVideo/src/index.js&#10;con&#9;FILE&#9;file:///Applications/Project/ReadVideo/src/common/constant.js&#10;sid&#9;FILE&#9;file:///Applications/Project/ReadVideo/styles/sidebar.css&#10;sty&#9;FILE&#9;file:///Applications/Project/ReadVideo/styles&#10;show&#9;FILE&#9;file:///Applications/Project/ReadVideo/src/service/showSubtitle.js&#10;s&#9;FILE&#9;file:///Applications/Project/ReadVideo/styles/sidebar.css&#10;sho&#9;FILE&#9;file:///Applications/Project/ReadVideo/src/service/showSubtitle.js&#10;sub&#9;FILE&#9;file:///Applications/Project/ReadVideo/src/entity/Subtitle.js&#10;sh&#9;FILE&#9;file:///Applications/Project/ReadVideo/src/service/showSubtitle.js&#10;Sub&#9;FILE&#9;file:///Applications/Project/ReadVideo/src/entity/Subtitle.js" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Applications/Project/ReadVideo/sidebar.html&#10;cons&#9;FILE&#9;file:///Applications/Project/ReadVideo/src/common/constant.js&#10;ma&#9;FILE&#9;file:///Applications/Project/ReadVideo/manifest.json&#10;se&#9;FILE&#9;file:///Applications/Project/ReadVideo/src/service/search.js&#10;css&#9;FILE&#9;file:///Applications/Project/ReadVideo/styles/sidebar.css&#10;inde&#9;FILE&#9;file:///Applications/Project/ReadVideo/src/index.js&#10;con&#9;FILE&#9;file:///Applications/Project/ReadVideo/src/common/constant.js&#10;sid&#9;FILE&#9;file:///Applications/Project/ReadVideo/styles/sidebar.css&#10;sty&#9;FILE&#9;file:///Applications/Project/ReadVideo/styles&#10;show&#9;FILE&#9;file:///Applications/Project/ReadVideo/src/service/showSubtitle.js&#10;s&#9;FILE&#9;file:///Applications/Project/ReadVideo/styles/sidebar.css&#10;sho&#9;FILE&#9;file:///Applications/Project/ReadVideo/src/service/showSubtitle.js&#10;sub&#9;FILE&#9;file:///Applications/Project/ReadVideo/src/entity/Subtitle.js&#10;sh&#9;FILE&#9;file:///Applications/Project/ReadVideo/src/service/showSubtitle.js&#10;Sub&#9;FILE&#9;file:///Applications/Project/ReadVideo/src/entity/Subtitle.js" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -278,7 +306,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84472000" />
+    <option name="totallyTimeSpent" value="87010000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -342,13 +370,6 @@
     <entry file="file://$PROJECT_DIR$/image/repeat_off.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/showSubtitle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/image/loading.gif">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -356,13 +377,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="10304" column="4" selection-start-line="10304" selection-start-column="4" selection-end-line="10304" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -388,20 +402,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/entity/Subtitle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manifest.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="12" column="42" lean-forward="true" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/styles/sidebar.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
@@ -409,17 +409,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/SubtitleService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/common/constant.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
-          <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+          <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -430,20 +423,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/SubtitleService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entity/Subtitle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sidebar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="38" column="53" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="53" />
+        <state relative-caret-position="339">
+          <caret line="19" column="14" lean-forward="true" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="5141" column="4" selection-start-line="5141" selection-start-column="4" selection-end-line="5141" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/showSubtitle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="38" column="44" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="199" column="8" selection-start-line="199" selection-start-column="8" selection-end-line="199" selection-end-column="8" />
+        <state relative-caret-position="260">
+          <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
           <folding>
             <element signature="e#0#53#0" expanded="true" />
-            <element signature="n#!!block;n#movePlayTime#0;n#ReadVideo#0" />
             <element signature="n#!!block;n#repeatModeClickHandler#0;n#ReadVideo#0" />
             <element signature="n#!!block;n#completeToSelectRepeat#0;n#ReadVideo#0" />
             <element signature="n#!!block;n#setRepeatNodeStyle#0;n#ReadVideo#0" />

@@ -9,7 +9,6 @@ export default class ShowSubtitle { // Todo 이름 마음에 안듬
 
     getSubtitles() {
         let trackList = document.querySelectorAll('track');
-        console.log(trackList);
         // let trackAddress = trackList == null ? '' : trackList.getAttribute('src');
 
         if (trackList == null) {
@@ -26,8 +25,6 @@ export default class ShowSubtitle { // Todo 이름 마음에 안듬
             subtitleList.push([lang, this.requestSubtitle(subtitleAddress)]);
         });
 
-        console.log(subtitleList);
-
         return subtitleList;
     }
 
@@ -39,6 +36,8 @@ export default class ShowSubtitle { // Todo 이름 마음에 안듬
                 this.video.currentTime = this.repeatStartTime;
             }
         };
+        console.log(this.video.currentTime);
+        return this.video.currentTime;
     }
 
     setCurrentPlayTime(changeTime){
@@ -55,7 +54,9 @@ export default class ShowSubtitle { // Todo 이름 마음에 안듬
 
 
         xhr.onreadystatechange = function () {
-            if (xhr.readyState !== XMLHttpRequest.DONE) return;
+            if (xhr.readyState !== XMLHttpRequest.DONE){
+                return;
+            }
 
             if (xhr.status === 200) {
                 subtitle = xhr.responseText;

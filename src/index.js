@@ -32,6 +32,7 @@ class ReadVideo {
 
         this.reloadBtn = document.querySelector('#reloadBtn');
         this.reloadBtn.addEventListener('click', this.reloadSubtitle);
+        document.querySelector('#logo').addEventListener('click', this.reloadSubtitle);
 
         this.selectLangService = new SelectLangService();
         this.selectLangService.selectNode.addEventListener('change', ()=>{
@@ -105,15 +106,13 @@ class ReadVideo {
                 let response = result[0];
                 let langIdx = 0;
                 let contentIdx = 1;
-                console.log("====response=====");
-                console.log(response);
+
                 this.currentSubtitles = this.transSubtitles(response[0][contentIdx]);
-                console.log("====AllSubtitle=====");
-                console.log(this.allSubtitles);
+
                 response.map(subtitleItem =>{
                     this.allSubtitles[subtitleItem[langIdx]] = this.transSubtitles(subtitleItem[contentIdx]);
                 });
-                console.log(this.allSubtitles);
+
                 this.noSupportWrapperNode.classList.add('hideSubtitle');
                 this.renderSubtitle(this.currentSubtitles);
                 this.selectLangService.loadSelectOption(this.allSubtitles);
@@ -128,6 +127,8 @@ class ReadVideo {
             code: `
                 window.showSubtitle.getCurrentPlayTime();
             `
+        }, (result) => {
+            this.scrollToTop(result[0], true);
         });
 
         whale.runtime.onConnect.addListener(port => {
@@ -143,12 +144,12 @@ class ReadVideo {
     }
 
 
-    scrollToTop = (currentTime) => {
+    scrollToTop = (currentTime, initFlag = false) => {
         let currentSubtitle = this.currentSubtitles.filter(item => {
             return item.startTime <= currentTime && item.endTime >= currentTime;
         });
 
-        if(currentSubtitle.length < 1)
+        if(currentSubtitle.length < 1 && !initFlag)
             return;
 
         let subtitleId = currentSubtitle[0].id;

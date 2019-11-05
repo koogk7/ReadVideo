@@ -18,7 +18,7 @@
   },
   "icons": {
     "32": "./image/logo_main.png",
-    "128": "./image/logo_main.png"
+    "128": "./image/main_logo.png"
   },
   "permissions": [
     "<all_urls>",

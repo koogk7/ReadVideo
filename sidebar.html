@@ -11,14 +11,12 @@
     <header>
         <div id ="top_bar1">
             <a class="btn" id="downloadBtn" href="" download="sub.txt">
-                <img id = "download_img" src="./image/download_off.png" class="icon_img"/>
+                <img id = "download_img" src="./image/download_off.png" class="icon_img" title="다운로드"/>
             </a>
             <input type="button" id="reloadBtn" class="btn" >
                 <label for="reloadBtn">
-                        <img id="reload_img" src="./image/reload_off.png" class="icon_img"/>
+                        <img id="reload_img" src="./image/reload_off.png" class="icon_img" title="자막 새로고침"/>
                 </label>
-                
-            
         </div>
 
         <div id="logo">
@@ -28,29 +26,25 @@
             <input type="text" name="searchText" id="searchText" placeholder="검색할 단어를 입력하세요." autocomplete="off" />
             <input type="button" class="btn" id="searchBtn" >
                 <label for="searchBtn">
-                    <img src="./image/search_off.png" class="icon_img" id="search_img"/>
+                    <img src="./image/search_off.png" class="icon_img" id="search_img" alt="검색" title="검색"/>
                 </label>
     
     
-            <!-- <div class="repeatBox"> -->
-                <span type="checkbox" class="btn" id="repeatBtn" data-toggle='true'>
-                    <img src="./image/repeat_off.png" class="icon_img"/>
-                </span>
-            <!-- </div> -->
-            
+            <span type="checkbox" class="btn" id="repeatBtn" data-toggle='true'>
+                <img src="./image/repeat_off.png" class="icon_img" alt="구간반복" title="구간반복"/>
+            </span>
 
-            <!-- <div class="scrollBox"> -->
-                <span type="checkbox" class="btn" id="scrollBtn" data-toggle='true'>
-                    <img src="./image/auto_scroll_off.png" class="icon_img"/>
-                </span>
-            <!-- </div> -->
+
+            <span type="checkbox" class="btn" id="scrollBtn" data-toggle='true'>
+                    <img src="./image/auto_scroll_off.png" class="icon_img" alt="자동 스크롤" title="자동 스크롤"/>
+            </span>
             
             
             <select id="selectLangBtn">
             </select>
-            <!-- <label for="selectLangBtn">
-                <img src="./image/language_on.png" class="icon_img" id="language_img" />
-            </label> -->
+            <label for="selectLangBtn">
+                <img src="./image/language_on.png" class="icon_img" id="language_img" alt="언어 선택" title="언어 선택"/>
+            </label>
         </div>
     </header>
 

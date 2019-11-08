@@ -14,7 +14,7 @@
       "16": "./image/logo_main.png"
     },
     "default_title": "사이드바앱",      // 선택
-    "use_navigation_bar": true       // 선택
+    "use_navigation_bar": false       // 선택
   },
   "icons": {
     "32": "./image/logo_main.png",

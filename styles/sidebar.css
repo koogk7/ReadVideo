@@ -25,15 +25,16 @@ header #top_bar1{
     right: 3vw;
 }
 
-header #logo_img{
+header #logo_img {
     margin-top: 5vh;
+    margin-bottom: 1vh;
     margin-left: 5vw;
-
-    width: 161.33px;
-    height: 40px;
+    width: 28vh;
+    height: 7vh;
 }
 header .top_bar{
-    margin-left: 5vw;
+    padding-left: 5vw;
+    background-color: white;
 }
 #searchText{
     background: url(../image/search_bar.png) no-repeat;

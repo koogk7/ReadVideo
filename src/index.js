@@ -9,6 +9,7 @@ class ReadVideo {
     /* Todo
      */
     constructor() {
+        console.log("Read!");
         this.allSubtitles = {}; // 다국어 자막 전체 저장
         this.currentSubtitles = []; // 현재 선택 자막
         this.subtitleListNode = document.querySelector('.subtitle_list');
@@ -31,7 +32,7 @@ class ReadVideo {
         this.searchText.addEventListener('keydown', this.searchAdmin.enterSearchHandler);
 
         this.reloadBtn = document.querySelector('#reloadBtn');
-        this.reloadBtn.addEventListener('click', this.reloadSubtitle);
+        this.reloadBtn.addEventListener('click', this.reloadBtnClickHandler);
         document.querySelector('#logo').addEventListener('click', this.reloadSubtitle);
 
         this.selectLangService = new SelectLangService();
@@ -62,6 +63,16 @@ class ReadVideo {
 
         repeatImg.setAttribute('src', CONSTANT.BASE_IMG_URL + CONSTANT.REPEAT_OFF_IMG);
         autoScrollBtnImg.setAttribute('src', CONSTANT.BASE_IMG_URL + CONSTANT.SCROLL_OFF_IMG)
+    };
+
+
+    reloadBtnClickHandler = ()=> {
+        document.getElementById("reload_img").setAttribute('src', "./image/reload_on.png");
+        this.reloadSubtitle();
+
+        setTimeout(()=>{
+            document.getElementById("reload_img").setAttribute('src', "./image/reload_off.png");
+        },100);
     };
 
     reloadSubtitle = () => {

@@ -9,7 +9,6 @@ class ReadVideo {
     /* Todo
      */
     constructor() {
-        console.log("Read!");
         this.allSubtitles = {}; // 다국어 자막 전체 저장
         this.currentSubtitles = []; // 현재 선택 자막
         this.subtitleListNode = document.querySelector('.subtitle_list');
@@ -33,7 +32,7 @@ class ReadVideo {
 
         this.reloadBtn = document.querySelector('#reloadBtn');
         this.reloadBtn.addEventListener('click', this.reloadBtnClickHandler);
-        document.querySelector('#logo').addEventListener('click', this.reloadSubtitle);
+        document.querySelector('#logo_img').addEventListener('click', this.reloadSubtitle);
 
         this.selectLangService = new SelectLangService();
         this.selectLangService.selectNode.addEventListener('change', ()=>{
@@ -49,6 +48,8 @@ class ReadVideo {
         this.loadingWrapperNode = document.querySelector('.loading_wrapper');
         this.noSupportWrapperNode = document.querySelector('.no_support_wrapper');
 
+        document.querySelector('#guideCloseBtn').addEventListener('click', ReadVideo.closeGuideHandler);
+        document.querySelector('#guideOpenBtn').addEventListener('click', ReadVideo.openGuideClickHandler);
         this.whaleEventListener();
     }
 
@@ -356,6 +357,15 @@ class ReadVideo {
         let iconUrl = isOn ? CONSTANT.REPEAT_ON_IMG : CONSTANT.REPEAT_OFF_IMG;
 
         iconNode.setAttribute('src', CONSTANT.BASE_IMG_URL + iconUrl);
+    }
+
+    static openGuideClickHandler(){
+        document.querySelector('.guide_wrapper').classList.remove('hideSubtitle');
+    }
+
+    static closeGuideHandler(){
+        // document.querySelector('.background_dark').classList.add('hideSubtitle');
+        document.querySelector('.guide_wrapper').classList.add('hideSubtitle');
     }
 
     whaleEventListener(){

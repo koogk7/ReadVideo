@@ -17,21 +17,21 @@ class ReadVideo {
         this.repeatMode = false;
         this.repeatStartId = null;
         this.repeatEndId = null;
-        this.repeatBtn  = document.querySelector('#repeatBtn');
-        this.repeatBtn.addEventListener('click', this.repeatBtnClickHandler.bind(this));
+        let repeatBtn  = document.querySelector('#repeatBtn');
+        repeatBtn.addEventListener('click', this.repeatBtnClickHandler.bind(this));
 
-        this.donwloadBtn= document.querySelector('#downloadBtn');
-        this.downloadAdmin = new DownloadAdmin();
-        this.donwloadBtn.addEventListener('click', this.downloadAdmin.downloadText);
+        let downloadBtn = document.querySelector('#downloadBtn');
+        let downloadAdmin = new DownloadAdmin();
+        downloadBtn.addEventListener('click', downloadAdmin.downloadText);
 
-        this.searchBtn = document.querySelector('#searchBtn');
-        this.searchText = document.querySelector('#searchText');
-        this.searchAdmin = new SearchAdmin();
-        this.searchBtn.addEventListener('click', this.searchAdmin.searchString);
-        this.searchText.addEventListener('keydown', this.searchAdmin.enterSearchHandler);
+        let searchBtn = document.querySelector('#searchBtn');
+        let searchText = document.querySelector('#searchText');
+        let searchAdmin = new SearchAdmin();
+        searchBtn.addEventListener('click', searchAdmin.searchString);
+        searchText.addEventListener('keydown', searchAdmin.enterSearchHandler);
 
-        this.reloadBtn = document.querySelector('#reloadBtn');
-        this.reloadBtn.addEventListener('click', this.reloadBtnClickHandler);
+        let reloadBtn = document.querySelector('#reloadBtn');
+        reloadBtn.addEventListener('click', this.reloadSubtitle);
         document.querySelector('#logo_img').addEventListener('click', this.reloadSubtitle);
 
         this.selectLangService = new SelectLangService();
@@ -49,7 +49,12 @@ class ReadVideo {
         this.noSupportWrapperNode = document.querySelector('.no_support_wrapper');
 
         document.querySelector('#guideCloseBtn').addEventListener('click', ReadVideo.closeGuideHandler);
-        document.querySelector('#guideOpenBtn').addEventListener('click', ReadVideo.openGuideClickHandler);
+        document.querySelector('#guide_img').addEventListener('click', ReadVideo.openGuideClickHandler);
+
+        let tobBar1BtnList = document.querySelectorAll('#top_bar1 img');
+        ReadVideo.topBarIconToggleHandler(tobBar1BtnList);
+        ReadVideo.iconAddEventHandler('search_img', 'search_on.png', 'search_off.png');
+
         this.whaleEventListener();
     }
 
@@ -64,16 +69,6 @@ class ReadVideo {
 
         repeatImg.setAttribute('src', CONSTANT.BASE_IMG_URL + CONSTANT.REPEAT_OFF_IMG);
         autoScrollBtnImg.setAttribute('src', CONSTANT.BASE_IMG_URL + CONSTANT.SCROLL_OFF_IMG)
-    };
-
-
-    reloadBtnClickHandler = ()=> {
-        document.getElementById("reload_img").setAttribute('src', "./image/reload_on.png");
-        this.reloadSubtitle();
-
-        setTimeout(()=>{
-            document.getElementById("reload_img").setAttribute('src', "./image/reload_off.png");
-        },100);
     };
 
     reloadSubtitle = () => {
@@ -183,7 +178,6 @@ class ReadVideo {
             autoScrollBtnImg.setAttribute('src', CONSTANT.BASE_IMG_URL + CONSTANT.SCROLL_OFF_IMG);
         }
     };
-
 
     syncVideo(currentTime){
         let currentSubtitle = this.currentSubtitles.filter(item => {
@@ -364,9 +358,28 @@ class ReadVideo {
     }
 
     static closeGuideHandler(){
-        // document.querySelector('.background_dark').classList.add('hideSubtitle');
         document.querySelector('.guide_wrapper').classList.add('hideSubtitle');
     }
+
+    static topBarIconToggleHandler(nodeList){
+        for(let idx=0; idx < nodeList.length; idx++){
+            let imgName = nodeList[idx].getAttribute('id');
+            let iconImgName = imgName.replace('img', '');
+            ReadVideo.iconAddEventHandler(imgName, iconImgName+'on.png', iconImgName+'off.png');
+        }
+    }
+
+    static iconAddEventHandler(iconId, iconOnName, iconOffName){
+        ReadVideo.iconMouseHandler(iconId,iconOnName, 'mouseover');
+        ReadVideo.iconMouseHandler(iconId,iconOffName, 'mouseout');
+    }
+
+    static iconMouseHandler(iconId, iconName, event){
+        document.querySelector('#' + iconId).addEventListener(event,()=>{
+            document.querySelector('#' + iconId).setAttribute('src', CONSTANT.BASE_IMG_URL + iconName);
+        });
+    }
+
 
     whaleEventListener(){
 

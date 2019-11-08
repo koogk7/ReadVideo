@@ -48,7 +48,7 @@ class ReadVideo {
 
         this.loadingWrapperNode = document.querySelector('.loading_wrapper');
         this.noSupportWrapperNode = document.querySelector('.no_support_wrapper');
-
+        
         this.whaleEventListener();
     }
 

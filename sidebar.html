@@ -10,11 +10,11 @@
 
     <header>
         <div id ="top_bar1">
-            <a class="btn btn_swap" id="downloadBtn" href="" download="sub.txt">
+            <a class="btn" id="downloadBtn" href="" download="sub.txt">
                 <img id = "download_img" src="./image/download_off.png" class="icon_img" title="다운로드"/>
             </a>
             <input type="button" id="reloadBtn" class="btn" >
-                <label for="reloadBtn" class = "btn_swap">
+                <label for="reloadBtn" >
                     <img id="reload_img" src="./image/reload_off.png" class="icon_img" title="자막 새로고침"/>
                 </label>
         </div>
@@ -25,18 +25,18 @@
         <div class="top_bar">
             <input type="text" name="searchText" id="searchText" placeholder="검색할 단어를 입력하세요." autocomplete="off" />
             <input type="button" class="btn" id="searchBtn" >
-                <label for="searchBtn" class="btn_swap">
+                <label for="searchBtn" >
                     <img src="./image/search_off.png" class="icon_img" id="search_img" alt="검색" title="검색"/>
                 </label>
     
     
-            <span type="checkbox" class="btn btn_swap" id="repeatBtn" data-toggle='true'>
+            <span type="checkbox" class="btn" id="repeatBtn" data-toggle='true'>
                 <img src="./image/repeat_off.png" class="icon_img" alt="구간반복" title="구간반복"/>
             </span>
 
 
-            <span type="checkbox" class="btn btn_swap" id="scrollBtn" data-toggle='true'>
-                    <img src="./image/auto_scroll_off.png" class="icon_img" alt="자동 스크롤" title="자동 스크롤"/> 
+            <span type="checkbox" class="btn" id="scrollBtn" data-toggle='true'>
+                <img src="./image/auto_scroll_off.png" class="icon_img" alt="자동 스크롤" title="자동 스크롤" /> 
             </span>
             
             <select id="selectLangBtn">
@@ -65,6 +65,7 @@
         <script type="module" src="src/index.js"></script>
     </div>
 
+    
 
 </body>
 

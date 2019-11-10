@@ -6,8 +6,6 @@ import DownloadAdmin from './service/download.js';
 import SearchAdmin from './service/search.js';
 
 class ReadVideo {
-    /* Todo
-     */
     constructor() {
         this.allSubtitles = {}; // 다국어 자막 전체 저장
         this.currentSubtitles = []; // 현재 선택 자막
@@ -105,7 +103,7 @@ class ReadVideo {
             window.showSubtitle.getSubtitles();    
       `
         }, (result) => { //  실행된 코드 마지막 결과를 받아온다.
-            // console.log(result);
+            
             if(result == null || result[0].length === 0){
                 this.renderNoSupport();
             }
@@ -163,8 +161,6 @@ class ReadVideo {
         let subtitleWrapNode = document.querySelector('.subtitle_wrap[data-idx="'+ subtitleId + '"]');
         let subtitleContentNode = subtitleWrapNode.querySelector('.subtitle_content');
         
-        
-        // if (getScrollTop() < getDocumentHeight() - window.innerHeight) return;
         subtitleContentNode.scrollIntoView({behavior: "auto", block: "center", inline: "nearest"}); // Bottom
     };
 
@@ -395,21 +391,6 @@ class ReadVideo {
             this.reloadSubtitle();
         });
 
-        // 탭이 종료되었을때
-        // whale.tabs.onRemoved.addListener((id) => {
-        //
-        // });
-
-        // 사이드바가 활성화 되었을때
-        // document.addEventListener('visibilitychange', ()=>{
-        //     if (document.visibilityState === `visible`) {
-        //         // 사이드바가 열렸을 때
-        //         this.initExecuteCode();
-        //         this.removeSubtitleList();
-        //         this.loadSubtitles();
-        //         this.connectWebVideo();
-        //     }
-        // }); // 화살표함수는 자체적으로 this를 bind 하지 않음
     }
 
 

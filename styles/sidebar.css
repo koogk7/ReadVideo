@@ -180,9 +180,10 @@ select {
 .background_dark{
     width: 100%;
     height: 100%;
-    background-color: gray;
-    opacity: 0.5;
-    filter: brightness(50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    /* background-image: url(../image/guide_back.png); */
+    /* opacity: 0.5; */
+    /* filter: brightness(90%); */
 }
 .guide_wrapper{
     width: 100%;
@@ -204,5 +205,17 @@ select {
 
 .close_btn{
     float: right;
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+}
+
+.guide{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-left: 5vw;
+    margin: 0 auto;
+    width: 90vw;
 }
 

@@ -46,8 +46,8 @@ class ReadVideo {
         this.loadingWrapperNode = document.querySelector('.loading_wrapper');
         this.noSupportWrapperNode = document.querySelector('.no_support_wrapper');
 
-        // document.querySelector('#closeBox').addEventListener('click', ReadVideo.closeGuideHandler);
-        document.querySelector('#guideCloseBtn').addEventListener('click', ReadVideo.closeGuideHandler);
+        document.querySelector('#closeBox').addEventListener('click', ReadVideo.closeGuideHandler);
+        // document.querySelector('#guideCloseBtn').addEventListener('click', ReadVideo.closeGuideHandler);
         document.querySelector('#guide_img').addEventListener('click', ReadVideo.openGuideClickHandler);
 
         let tobBar1BtnList = document.querySelectorAll('#top_bar1 img');
@@ -134,7 +134,8 @@ class ReadVideo {
                 window.showSubtitle.getCurrentPlayTime();
             `
         }, (result) => {
-            this.scrollToTop(result[0], true);
+            if(result != null)
+                this.scrollToTop(result[0], true);
         });
 
         whale.runtime.onConnect.addListener(port => {

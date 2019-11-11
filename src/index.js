@@ -46,6 +46,7 @@ class ReadVideo {
         this.loadingWrapperNode = document.querySelector('.loading_wrapper');
         this.noSupportWrapperNode = document.querySelector('.no_support_wrapper');
 
+        // document.querySelector('#closeBox').addEventListener('click', ReadVideo.closeGuideHandler);
         document.querySelector('#guideCloseBtn').addEventListener('click', ReadVideo.closeGuideHandler);
         document.querySelector('#guide_img').addEventListener('click', ReadVideo.openGuideClickHandler);
 

@@ -203,9 +203,11 @@ select {
     left: 0;
 }
 
+/* .close{
+    padding: 1vh;
+} */
 .close_btn{
     float: right;
-    margin-top: 3vh;
     width: 35px;
     height: 35px;
     padding: 5px;

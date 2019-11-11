@@ -46,7 +46,7 @@ class ReadVideo {
         this.loadingWrapperNode = document.querySelector('.loading_wrapper');
         this.noSupportWrapperNode = document.querySelector('.no_support_wrapper');
 
-        document.querySelector('#closeBox').addEventListener('click', ReadVideo.closeGuideHandler);
+        document.querySelector('.guide_content').addEventListener('click', ReadVideo.closeGuideHandler);
         // document.querySelector('#guideCloseBtn').addEventListener('click', ReadVideo.closeGuideHandler);
         document.querySelector('#guide_img').addEventListener('click', ReadVideo.openGuideClickHandler);
 
@@ -351,7 +351,7 @@ class ReadVideo {
         iconNode.setAttribute('src', CONSTANT.BASE_IMG_URL + iconUrl);
     }
 
-    static openGuideClickHandler(){
+    static openGuideClickHandler(event){
         document.querySelector('.guide_wrapper').classList.remove('hideSubtitle');
     }
 
